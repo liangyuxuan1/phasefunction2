@@ -5,8 +5,8 @@
 #InParm                    	# Input parameters. cm is used.
 a00_s00_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -18,8 +18,8 @@ a00_s00_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s00_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -31,8 +31,8 @@ a00_s00_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s00_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -44,8 +44,8 @@ a00_s00_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s00_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -57,8 +57,8 @@ a00_s00_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s01_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -70,8 +70,8 @@ a00_s01_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s01_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -83,8 +83,8 @@ a00_s01_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s01_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -96,8 +96,8 @@ a00_s01_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s01_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -109,8 +109,8 @@ a00_s01_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s02_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -122,8 +122,8 @@ a00_s02_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s02_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -135,8 +135,8 @@ a00_s02_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s02_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -148,8 +148,8 @@ a00_s02_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s02_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -161,8 +161,8 @@ a00_s02_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s03_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -174,8 +174,8 @@ a00_s03_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s03_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -187,8 +187,8 @@ a00_s03_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s03_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -200,8 +200,8 @@ a00_s03_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s03_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -213,8 +213,8 @@ a00_s03_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s04_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -226,8 +226,8 @@ a00_s04_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s04_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -239,8 +239,8 @@ a00_s04_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s04_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -252,8 +252,8 @@ a00_s04_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s04_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -265,8 +265,8 @@ a00_s04_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s05_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -278,8 +278,8 @@ a00_s05_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s05_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -291,8 +291,8 @@ a00_s05_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s05_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -304,8 +304,8 @@ a00_s05_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s05_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -317,8 +317,8 @@ a00_s05_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s06_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -330,8 +330,8 @@ a00_s06_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s06_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -343,8 +343,8 @@ a00_s06_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s06_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -356,8 +356,8 @@ a00_s06_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s06_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -369,8 +369,8 @@ a00_s06_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s07_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -382,8 +382,8 @@ a00_s07_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s07_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -395,8 +395,8 @@ a00_s07_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s07_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -408,8 +408,8 @@ a00_s07_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s07_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -421,8 +421,8 @@ a00_s07_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s08_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -434,8 +434,8 @@ a00_s08_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s08_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -447,8 +447,8 @@ a00_s08_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s08_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -460,8 +460,8 @@ a00_s08_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a00_s08_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -473,8 +473,8 @@ a00_s08_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s00_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -486,8 +486,8 @@ a01_s00_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s00_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -499,8 +499,8 @@ a01_s00_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s00_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -512,8 +512,8 @@ a01_s00_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s00_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -525,8 +525,8 @@ a01_s00_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s01_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -538,8 +538,8 @@ a01_s01_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s01_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -551,8 +551,8 @@ a01_s01_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s01_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -564,8 +564,8 @@ a01_s01_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s01_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -577,8 +577,8 @@ a01_s01_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s02_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -590,8 +590,8 @@ a01_s02_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s02_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -603,8 +603,8 @@ a01_s02_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s02_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -616,8 +616,8 @@ a01_s02_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s02_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -629,8 +629,8 @@ a01_s02_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s03_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -642,8 +642,8 @@ a01_s03_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s03_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -655,8 +655,8 @@ a01_s03_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s03_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -668,8 +668,8 @@ a01_s03_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s03_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -681,8 +681,8 @@ a01_s03_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s04_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -694,8 +694,8 @@ a01_s04_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s04_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -707,8 +707,8 @@ a01_s04_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s04_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -720,8 +720,8 @@ a01_s04_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s04_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -733,8 +733,8 @@ a01_s04_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s05_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -746,8 +746,8 @@ a01_s05_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s05_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -759,8 +759,8 @@ a01_s05_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s05_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -772,8 +772,8 @@ a01_s05_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s05_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -785,8 +785,8 @@ a01_s05_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s06_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -798,8 +798,8 @@ a01_s06_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s06_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -811,8 +811,8 @@ a01_s06_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s06_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -824,8 +824,8 @@ a01_s06_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s06_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -837,8 +837,8 @@ a01_s06_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s07_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -850,8 +850,8 @@ a01_s07_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s07_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -863,8 +863,8 @@ a01_s07_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s07_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -876,8 +876,8 @@ a01_s07_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s07_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -889,8 +889,8 @@ a01_s07_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s08_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -902,8 +902,8 @@ a01_s08_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s08_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -915,8 +915,8 @@ a01_s08_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s08_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -928,8 +928,8 @@ a01_s08_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a01_s08_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -941,8 +941,8 @@ a01_s08_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s00_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -954,8 +954,8 @@ a02_s00_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s00_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -967,8 +967,8 @@ a02_s00_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s00_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -980,8 +980,8 @@ a02_s00_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s00_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -993,8 +993,8 @@ a02_s00_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s01_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1006,8 +1006,8 @@ a02_s01_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s01_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1019,8 +1019,8 @@ a02_s01_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s01_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1032,8 +1032,8 @@ a02_s01_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s01_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1045,8 +1045,8 @@ a02_s01_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s02_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1058,8 +1058,8 @@ a02_s02_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s02_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1071,8 +1071,8 @@ a02_s02_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s02_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1084,8 +1084,8 @@ a02_s02_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s02_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1097,8 +1097,8 @@ a02_s02_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s03_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1110,8 +1110,8 @@ a02_s03_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s03_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1123,8 +1123,8 @@ a02_s03_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s03_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1136,8 +1136,8 @@ a02_s03_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s03_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1149,8 +1149,8 @@ a02_s03_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s04_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1162,8 +1162,8 @@ a02_s04_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s04_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1175,8 +1175,8 @@ a02_s04_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s04_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1188,8 +1188,8 @@ a02_s04_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s04_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1201,8 +1201,8 @@ a02_s04_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s05_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1214,8 +1214,8 @@ a02_s05_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s05_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1227,8 +1227,8 @@ a02_s05_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s05_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1240,8 +1240,8 @@ a02_s05_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s05_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1253,8 +1253,8 @@ a02_s05_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s06_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1266,8 +1266,8 @@ a02_s06_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s06_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1279,8 +1279,8 @@ a02_s06_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s06_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1292,8 +1292,8 @@ a02_s06_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s06_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1305,8 +1305,8 @@ a02_s06_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s07_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1318,8 +1318,8 @@ a02_s07_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s07_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1331,8 +1331,8 @@ a02_s07_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s07_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1344,8 +1344,8 @@ a02_s07_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s07_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1357,8 +1357,8 @@ a02_s07_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s08_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1370,8 +1370,8 @@ a02_s08_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s08_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1383,8 +1383,8 @@ a02_s08_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s08_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1396,8 +1396,8 @@ a02_s08_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a02_s08_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1409,8 +1409,8 @@ a02_s08_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s00_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1422,8 +1422,8 @@ a03_s00_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s00_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1435,8 +1435,8 @@ a03_s00_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s00_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1448,8 +1448,8 @@ a03_s00_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s00_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1461,8 +1461,8 @@ a03_s00_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s01_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1474,8 +1474,8 @@ a03_s01_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s01_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1487,8 +1487,8 @@ a03_s01_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s01_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1500,8 +1500,8 @@ a03_s01_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s01_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1513,8 +1513,8 @@ a03_s01_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s02_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1526,8 +1526,8 @@ a03_s02_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s02_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1539,8 +1539,8 @@ a03_s02_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s02_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1552,8 +1552,8 @@ a03_s02_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s02_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1565,8 +1565,8 @@ a03_s02_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s03_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1578,8 +1578,8 @@ a03_s03_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s03_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1591,8 +1591,8 @@ a03_s03_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s03_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1604,8 +1604,8 @@ a03_s03_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s03_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1617,8 +1617,8 @@ a03_s03_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s04_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1630,8 +1630,8 @@ a03_s04_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s04_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1643,8 +1643,8 @@ a03_s04_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s04_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1656,8 +1656,8 @@ a03_s04_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s04_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1669,8 +1669,8 @@ a03_s04_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s05_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1682,8 +1682,8 @@ a03_s05_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s05_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1695,8 +1695,8 @@ a03_s05_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s05_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1708,8 +1708,8 @@ a03_s05_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s05_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1721,8 +1721,8 @@ a03_s05_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s06_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1734,8 +1734,8 @@ a03_s06_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s06_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1747,8 +1747,8 @@ a03_s06_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s06_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1760,8 +1760,8 @@ a03_s06_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s06_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1773,8 +1773,8 @@ a03_s06_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s07_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1786,8 +1786,8 @@ a03_s07_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s07_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1799,8 +1799,8 @@ a03_s07_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s07_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1812,8 +1812,8 @@ a03_s07_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s07_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1825,8 +1825,8 @@ a03_s07_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s08_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1838,8 +1838,8 @@ a03_s08_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s08_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1851,8 +1851,8 @@ a03_s08_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s08_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1864,8 +1864,8 @@ a03_s08_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a03_s08_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1877,8 +1877,8 @@ a03_s08_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s00_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1890,8 +1890,8 @@ a04_s00_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s00_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1903,8 +1903,8 @@ a04_s00_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s00_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1916,8 +1916,8 @@ a04_s00_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s00_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1929,8 +1929,8 @@ a04_s00_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s01_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1942,8 +1942,8 @@ a04_s01_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s01_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1955,8 +1955,8 @@ a04_s01_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s01_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1968,8 +1968,8 @@ a04_s01_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s01_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1981,8 +1981,8 @@ a04_s01_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s02_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -1994,8 +1994,8 @@ a04_s02_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s02_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2007,8 +2007,8 @@ a04_s02_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s02_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2020,8 +2020,8 @@ a04_s02_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s02_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2033,8 +2033,8 @@ a04_s02_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s03_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2046,8 +2046,8 @@ a04_s03_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s03_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2059,8 +2059,8 @@ a04_s03_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s03_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2072,8 +2072,8 @@ a04_s03_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s03_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2085,8 +2085,8 @@ a04_s03_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s04_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2098,8 +2098,8 @@ a04_s04_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s04_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2111,8 +2111,8 @@ a04_s04_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s04_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2124,8 +2124,8 @@ a04_s04_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s04_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2137,8 +2137,8 @@ a04_s04_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s05_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2150,8 +2150,8 @@ a04_s05_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s05_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2163,8 +2163,8 @@ a04_s05_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s05_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2176,8 +2176,8 @@ a04_s05_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s05_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2189,8 +2189,8 @@ a04_s05_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s06_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2202,8 +2202,8 @@ a04_s06_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s06_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2215,8 +2215,8 @@ a04_s06_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s06_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2228,8 +2228,8 @@ a04_s06_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s06_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2241,8 +2241,8 @@ a04_s06_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s07_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2254,8 +2254,8 @@ a04_s07_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s07_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2267,8 +2267,8 @@ a04_s07_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s07_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2280,8 +2280,8 @@ a04_s07_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s07_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2293,8 +2293,8 @@ a04_s07_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s08_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2306,8 +2306,8 @@ a04_s08_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s08_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2319,8 +2319,8 @@ a04_s08_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s08_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2332,8 +2332,8 @@ a04_s08_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a04_s08_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2345,8 +2345,8 @@ a04_s08_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s00_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2358,8 +2358,8 @@ a05_s00_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s00_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2371,8 +2371,8 @@ a05_s00_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s00_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2384,8 +2384,8 @@ a05_s00_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s00_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2397,8 +2397,8 @@ a05_s00_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s01_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2410,8 +2410,8 @@ a05_s01_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s01_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2423,8 +2423,8 @@ a05_s01_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s01_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2436,8 +2436,8 @@ a05_s01_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s01_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2449,8 +2449,8 @@ a05_s01_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s02_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2462,8 +2462,8 @@ a05_s02_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s02_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2475,8 +2475,8 @@ a05_s02_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s02_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2488,8 +2488,8 @@ a05_s02_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s02_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2501,8 +2501,8 @@ a05_s02_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s03_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2514,8 +2514,8 @@ a05_s03_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s03_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2527,8 +2527,8 @@ a05_s03_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s03_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2540,8 +2540,8 @@ a05_s03_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s03_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2553,8 +2553,8 @@ a05_s03_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s04_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2566,8 +2566,8 @@ a05_s04_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s04_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2579,8 +2579,8 @@ a05_s04_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s04_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2592,8 +2592,8 @@ a05_s04_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s04_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2605,8 +2605,8 @@ a05_s04_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s05_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2618,8 +2618,8 @@ a05_s05_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s05_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2631,8 +2631,8 @@ a05_s05_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s05_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2644,8 +2644,8 @@ a05_s05_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s05_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2657,8 +2657,8 @@ a05_s05_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s06_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2670,8 +2670,8 @@ a05_s06_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s06_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2683,8 +2683,8 @@ a05_s06_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s06_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2696,8 +2696,8 @@ a05_s06_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s06_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2709,8 +2709,8 @@ a05_s06_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s07_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2722,8 +2722,8 @@ a05_s07_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s07_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2735,8 +2735,8 @@ a05_s07_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s07_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2748,8 +2748,8 @@ a05_s07_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s07_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2761,8 +2761,8 @@ a05_s07_g03_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s08_g00_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2774,8 +2774,8 @@ a05_s08_g00_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s08_g01_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2787,8 +2787,8 @@ a05_s08_g01_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s08_g02_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
@@ -2800,8 +2800,8 @@ a05_s08_g02_01.mco 	A	      	# output file name, ASCII.
 #InParm                    	# Input parameters. cm is used.
 a05_s08_g03_01.mco 	A	      	# output file name, ASCII.
 10000000                  	# No. of photons
-0.01	0.02               	# dz, dr [cm]
-1 500 90                	# No. of dz, dr, da.
+0.01	0.01               	# dz, dr [cm]
+1 250 90                	# No. of dz, dr, da.
 
 1                        	# Number of layers
 #n	mua	mus	g	d         	# One line for each layer
