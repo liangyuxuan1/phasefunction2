@@ -20,7 +20,7 @@ def read_mose_results(datalist, datapath, imgpath):
     if not os.path.exists(image_dir):
         os.mkdir(image_dir)
 
-    for i in range(20):#range(len(datalist)):
+    for i in range(len(datalist)):
         file_name = os.path.join(datapath, datalist['Image'].loc[i])
         print(file_name)
 
@@ -66,7 +66,7 @@ def read_mose_results(datalist, datapath, imgpath):
                     TransmittanceTopXY[row, col] = float(line_items[col])
             np.save(os.path.join(imgpath, datalist['Image'].loc[i]), TransmittanceTopXY)
 
-            if datalist['Run'].loc[i] == 1:
+            if file_name.find('001.T.CW') != -1:
                 print('saving image ...')
                 img = np.log10(TransmittanceTopXY + 1e-10)
                 # img = np.nan_to_num(img)
