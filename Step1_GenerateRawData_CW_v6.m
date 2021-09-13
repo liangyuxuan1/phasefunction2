@@ -37,13 +37,13 @@ if ~exist(dataPath,'dir')
     mkdir(dataPath);
 end
 
-varNames = {'Image', 'ua', 'us', 'g', 'Run', 'Events'};
-varTypes = {'string', 'double', 'double', 'double', 'int16', 'string'};
+varNames = {'Image', 'ua', 'us', 'g', 'Tissue', 'Events'};
+varTypes = {'string', 'double', 'double', 'double', 'string', 'string'};
 
 totalTrainNum = length(ua)*length(us)*length(g)*trainNum;
 trainTableCW = table('Size', [totalTrainNum,length(varNames)], 'VariableTypes',varTypes,'VariableNames',varNames);
 % train dataset
-for ia = 3:5 %length(ua)
+for ia = 1:length(ua)
     for is = 1:length(us)
         for ig = 1:length(g)
             for i=1:trainNum
@@ -54,10 +54,11 @@ for ia = 3:5 %length(ua)
                 cmdLine = strjoin(parameters, ' ');
 
                 % rum MOSE
-                system(cmdLine); 
+                % system(cmdLine); 
 
                 dataFileName = strcat(dataFileName, '.T.CW');
-                row = {dataFileName, ua(ia), us(is), g(ig), i, 'Train'};
+                tissueName = (ia-1)*length(us)*length(g) + (is-1)*length(g) + ig;
+                row = {dataFileName, ua(ia), us(is), g(ig), num2str(tissueName), 'Train'};
                 idx = (ia-1)*length(us)*length(g)*trainNum + (is-1)*length(g)*trainNum + (ig-1)*trainNum + i;
                 trainTableCW(idx, :) = row;
             end % i
