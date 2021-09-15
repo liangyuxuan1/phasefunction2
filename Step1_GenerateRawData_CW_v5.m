@@ -58,13 +58,13 @@ for p = 1:length(tissueName)
         parameters = ['MOSE\moseVCTest.exe', phantomFile, fullDataFileName, num2str(ua), num2str(us), num2str(g), num2str(n)];
         cmdLine = strjoin(parameters, ' ');
         
-        system(cmdLine);    % call MOSE
+        % system(cmdLine);    % call MOSE
         
         dataFileName = strcat(dataFileName, '.T.CW');
         samplePath = fullfile(tissueName{p}, dataFileName);
-        row = {samplePath, ua, us, g, tissueName{p}, ''};
+        row = {samplePath, ua, us, g, tissueName{p}, 'Train'};
         trainTableCW((p-1)*trainNum+i, :) = row;
     end 
 end % of train
-writetable(trainTableCW, [dataPath, filesep,  'DataListCW_v5.csv']);
+writetable(trainTableCW, [dataPath, filesep,  'TrainDataCW_v5.csv']);
 
