@@ -157,11 +157,8 @@ if __name__=='__main__':
 
     img_path = "ImageCW_v6"
     DataListFile = "TrainDataCW_v6_Results.csv"
-    tmp_processed_data_dir = "temp_processed_data"
     checkpoint_path = 'training_results'
 
-    if not os.path.exists(tmp_processed_data_dir):
-        os.mkdir(tmp_processed_data_dir)
     if not os.path.exists(checkpoint_path):
         os.mkdir(checkpoint_path)
     logger = double_logger(log_path=checkpoint_path).getLogger()
@@ -180,12 +177,12 @@ if __name__=='__main__':
     total_pickle_file_name = 'total_train.pkl'
     test_pickle_file_name  = 'test.pkl'
     print('Preprocessing...')
-    # DataPreprocessor().dump(labels, img_path, tmp_processed_data_dir, total_pickle_file_name, preprocessing_transformer)
+    # DataPreprocessor().dump(labels, img_path, checkpoint_path, total_pickle_file_name, preprocessing_transformer)
     print('Preprocessing finished')
 
     total_data = CustomImageDataset_Pickle(
         img_labels = labels,
-        file_preprocessed = os.path.join(tmp_processed_data_dir, total_pickle_file_name),
+        file_preprocessed = os.path.join(checkpoint_path, total_pickle_file_name),
         transform = train_transformer
     )
 
@@ -215,12 +212,12 @@ if __name__=='__main__':
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
     Trn = trainer.Trainer()
-    bestmodel_name = f'best_model_NoG_{num_of_Gaussian}' 
+    bestmodel_name = f'best_model_NoG_{num_of_Gaussian}_run_x' 
     logger.info(f'NoG: {num_of_Gaussian}, Training {bestmodel_name}')
     val_loss_min, train_loss, df_loss = Trn.run(train_dataloader, val_dataloader, model, loss_func_mse, 
                                                 optimizer, scheduler, num_epochs=30,
                                                 model_dir=checkpoint_path, model_name=bestmodel_name)
-    df_loss.to_csv(os.path.join(checkpoint_path, f'train_loss.csv'), index=False)
+    df_loss.to_csv(os.path.join(checkpoint_path, f'train_loss_run_x.csv'), index=False)
 
     #---end of for cross-validation
     print('Done')
