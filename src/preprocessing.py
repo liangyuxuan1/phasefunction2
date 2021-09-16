@@ -1,6 +1,5 @@
 import torch
 import numpy as np
-import scipy.io as scipyIO
 import pickle
 import os
 
@@ -24,14 +23,13 @@ class DataPreprocessor:
         result = None
         images = []
         for i in range(len(img_labels)):
-            file_name = os.path.join(images_base_directory, img_labels.iloc[i, 0])
-            image = scipyIO.loadmat(file_name).get('rawData')
-            image = image.astype(np.float64)
+            file_name = os.path.join(images_base_directory, img_labels.iloc[i,0]) + '.npy'
+            image = np.load(file_name)
             h, w = image.shape
             image = torch.from_numpy(image).reshape(1, h, w)
             image = image.float()
 
-            # Resize image
+            # apply preprocessing
             image = preprocessing_transformer(image)
             images.append(image)
             result = {
