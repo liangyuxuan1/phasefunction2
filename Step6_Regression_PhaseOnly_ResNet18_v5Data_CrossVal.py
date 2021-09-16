@@ -127,210 +127,6 @@ def loss_func_mse(prediction, gt):
 
     return loss
 
-# In a single training loop, the model makes predictions on the training dataset (fed to it in batches), 
-# and backpropagates the prediction error to adjust the model’s parameters.
-def train(dataloader, model, loss_fn, optimizer):
-    size = len(dataloader.dataset)
-    num_batches = len(dataloader)
-    model.train()
-    train_loss = 0
-    current = 0
-    for batch, (X, y) in enumerate(dataloader):
-        X, y = X.to(device), y.to(device)
-
-        # Compute prediction error
-        pred = model(X)
-        loss = loss_fn(pred, y)
-        train_loss += loss.item()
-
-        # Backpropagation
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-        
-        current += len(X)
-        if (batch+1) % 10 == 0:
-            print(f"loss: {loss.item():>0.6f}  [{current:>5d}/{size:>5d}]")
-
-    train_loss /= num_batches
-    print(f"loss: {train_loss:>0.6f}  [{current:>5d}/{size:>5d}]")
-
-    scheduler.step()
-
-    return train_loss
-
-# We also check the model’s performance against the test dataset to ensure it is learning.
-def test(dataloader, model, loss_fn):
-    size = len(dataloader.dataset)
-    num_batches = len(dataloader)
-    model.eval()
-    test_loss, correct = 0, np.zeros(3)
-    with torch.no_grad():
-        for X, y in dataloader:
-            X, y = X.to(device), y.to(device)
-            pred = model(X)
-            loss = loss_fn(pred, y)
-            test_loss += loss.item()
-            
-            # pred_uas = pred[:, -2:]
-            # gt_uas = y[:, :2]
-            # pred_error = (pred_uas - gt_uas).abs()/gt_uas
-            # small_error_num = (pred_error <= 0.1).prod(1).sum().item()
-            # large_error_num = (pred_error >= 0.5).prod(1).sum().item()
-            # medium_error_num = len(pred_error) - small_error_num - large_error_num
-            # correct += [small_error_num, medium_error_num, large_error_num]
-    test_loss /= num_batches
-    correct /= size
-    # print(f"Test Error: \n Accuracy: {(100*correct[0]):>0.1f}%, {(100*correct[1]):>0.1f}%, {(100*correct[2]):>0.1f}%, Avg loss: {test_loss:>10f} \n")
-    print(f"Validation Avg loss: {test_loss:>0.6f}")
-
-    return test_loss, correct
-
-# show test results and add the figure in writter
-# https://tensorflow.google.cn/tensorboard/image_summaries?hl=zh-cn
-
-def show_result_samples(dataset, showFig=False):
-    cols, rows = 4, 2
-    numEachUaGroup = len(dataset)/(cols*rows)
-    sample_idx = np.zeros(cols*rows, dtype=np.int32)
-    for i in range (cols*rows):
-       sample_idx[i] = np.random.randint(numEachUaGroup) + i*numEachUaGroup
-    
-    model.eval()
-
-    figure = plt.figure(figsize=(18, 9))
-    label = dataset.img_labels
-    for i in range(cols * rows):
-        idx = sample_idx[i]
-        x, gt = dataset[idx]
-        x = x.reshape(1,*x.shape)
-        gt = gt.reshape(1,-1)
-        x, gt = x.to(device), gt.to(device)
-
-        pred = model(x)
-        loss = loss_fn(pred, gt)
-
-        pred = pred.detach()
-
-        gmm = GMM(pred[:, 0:num_of_Gaussian*3], theta)
-        # gt = gtNorm.restore(gt.to("cpu"))
-        g = label.iloc[idx, 3]
-        g = torch.tensor([g])
-        g = g.to(device)
-        p_theta = HG_theta(g, theta)
-
-        ua = label.iloc[idx, 1]
-        us = label.iloc[idx, 2]
-
-        figure.add_subplot(rows, cols, i+1)
-        figtitle = 'ua=%.3f, us=%.2f, g=%.2f \n loss=%.4f' %(ua, us, g, loss.item())
-        plt.title(figtitle)
-        plt.axis("on")
-        gmm, p_theta = gmm.to("cpu"), p_theta.to("cpu")
-        gmm = gmm.numpy()
-        p_theta = p_theta.numpy()
-        px = theta.to("cpu")
-        px = px.numpy()
-        plt.plot(px, gmm.squeeze())
-        plt.plot(px, p_theta.squeeze())
-
-    # mng = plt.get_current_fig_manager()
-    # mng.window.showMaximized()
-    if showFig:
-        plt.show()
-    return figure
-
-def show_Results(dataset, figure_path, save_figure=False):
-    if not os.path.exists(figure_path):
-        os.mkdir(figure_path)
-
-    model.eval()
-
-    results = np.zeros((len(dataset), 9))   # ['ua', 'pred_ua', 'ua_re', 'us', 'pred_us', 'us_re', 'g', 'phase_mse', 'numPixels']
-    label = dataset.img_labels
-    for i in range(len(dataset)):
-        x, _ = dataset[i]
-        img = x*stdPixelVal + meanPixelVal
-        x = x.reshape(1,*x.shape)
-        x = x.to(device)
-        pred = model(x)
-        # loss = loss_fn(pred, gt)
-
-        gmm = GMM(pred[:, 0:num_of_Gaussian*3], theta)
-        g = label.iloc[i, 3]
-        g = torch.tensor([g])
-        g = g.to(device)
-        p_theta = HG_theta(g, theta)
-        phase_mse = nn.MSELoss()(gmm, p_theta)
-        phase_mse = phase_mse.detach()
-        phase_mse = phase_mse.to("cpu")
-
-        pred = pred.detach()
-        pred = pred.squeeze()
-        pred = pred.to("cpu")
-
-        ua, us = label.iloc[i, 1], label.iloc[i, 2]
-        # tmp = torch.tensor([pred[-2], pred[-1], np.random.rand()])
-        # pred_rst = gtNorm.restore(tmp)      # change the network output to parameter range
-        # pred_ua, pred_us = pred_rst[0], pred_rst[1]
-        # ua_re, us_re = np.abs(ua-pred_ua)/ua, np.abs(us-pred_us)/us
-        pred_ua, pred_us = 0, 0
-        ua_re, us_re = 0, 0
-
-        results[i,:] = [ua, pred_ua, ua_re, us, pred_us, us_re, label.iloc[i, 3], phase_mse, label.iloc[i, 4]]
-
-        if save_figure and (i % 10 == 0):
-            fig = plt.figure(figsize=(8, 4))
-            plt.axis("off")
-            figtitle = 'ua=%.3f, us=%.2f, g=%.2f, Phase MSE=%.4f \n' %(ua, us, g, phase_mse)
-            plt.title(figtitle)
-
-            fig.add_subplot(1, 2, 1)
-            plt.axis("off")
-            img = np.float_power(img.squeeze(), 0.1)
-            plt.imshow((img), cmap="hot")
-
-            fig.add_subplot(1, 2, 2)
-            plt.axis("on")
-            gmm, p_theta = gmm.detach(),  p_theta.detach()
-            gmm, p_theta = gmm.to("cpu"), p_theta.to("cpu")
-            gmm, p_theta = gmm.numpy(),   p_theta.numpy()
-            px = theta.to("cpu")
-            px = px.numpy()
-            plt.plot(px, gmm.squeeze(), label='est')
-            plt.plot(px, p_theta.squeeze(), label='gt')
-            plt.legend()
-            
-            figFileName = 'Fig_%04d.png' % (i/10 + 1)
-            figFile = os.path.join(figure_path, figFileName)
-            plt.savefig(figFile, bbox_inches='tight')
-            plt.close('all')
-       
-    return results
-
-def write_results_exel(results, filename):
-    data_df = pd.DataFrame(results)
-    data_df.columns = ['ua', 'pred_ua', 'ua_RE', 'us', 'pred_us', 'us_RE', 'g', 'phase_MSE', 'numPixels']
-    # need to install openpyxl: pip install openpyxl
-    # and import openpyxl
-    tb_writer = pd.ExcelWriter(filename)
-    data_df.to_excel(tb_writer, 'page_1', float_format='%.4f')
-    tb_writer.save()
-    tb_writer.close()
-
-def write_results_txt(results, filename):
-    fid = open(filename, 'w')
-    for i in range(np.size(results, 0)):
-        for j in range(np.size(results, 1)):
-            fid.write('%04f\t' % results[i,j])
-        fid.write('%04f\n' % np.mean(results[i,:]))
-    fid.write('\n%04f\n\n' % np.mean(results))
-
-    model_struct = summary(model, (1, 500, 500), verbose=0)
-    model_struct_str = str(model_struct)
-    fid.write(model_struct_str)
-
-    fid.close()
 
 # ==============================================================================================================
 if __name__=='__main__':
@@ -353,13 +149,16 @@ if __name__=='__main__':
     # imageCW_v4_fat, 500x500, training number = 200, mean = 0.0068, std = 0.3823
 
     # imageCW_v5, 500x500, number=1000, mean=0.0035, std=0.2197
-    meanPixelVal = 0.0035   # using statistics of all v5 data
-    stdPixelVal  = 0.2197
+    
+    # 2021-09-16
+    # Dataset V5, large phantom, mean = 0.0039, std = 0.2198
+    meanPixelVal = 0.0039   # using statistics of all v5 data
+    stdPixelVal  = 0.2198
 
-    img_path = "imageCW_v5"
-    DataListFile = "DataListCW_v5.csv"
+    img_path = "ImageCW_v5"
+    DataListFile = "TrainDataCW_v5_Results.csv"
     tmp_processed_data_dir = "temp_processed_data"
-    checkpoint_path = 'training_results'
+    checkpoint_path = 'CrossVal_results_v5Data'
 
     temp_test_pickle_file_name  = 'test.pkl'
 
@@ -380,18 +179,11 @@ if __name__=='__main__':
     theta = np.arange(0, np.pi, 0.01)
     theta = torch.from_numpy(theta).to(device)
 
-    total_labels = pd.read_csv(os.path.join(img_path, DataListFile))
-    all_tissues = ['Surface', 'Lung', 'Kidney', 'Heart', 'Stomach', 'Liver', 'Tumor']
-    test_tissue = 'Tumor'
-    tissue_names = all_tissues.copy()
-    tissue_names.remove(test_tissue)
-    test_labels = total_labels.iloc[(total_labels['Tissue']=='Tumor').tolist()]
-    labels = total_labels.iloc[(total_labels['Tissue']!='Tumor').tolist()]
+    labels = pd.read_csv(os.path.join(img_path, DataListFile))
+    tissues = pd.unique(labels['Tissue'])
 
-    for fold, val_tissue in enumerate(tissue_names):
-        train_tissue = tissue_names.copy()
-        train_tissue.remove(val_tissue)
-        logger.info(f'Fold: {fold}, train: {train_tissue}, val: {val_tissue}')
+    for fold, val_tissue in enumerate(tissues):
+        logger.info(f'Fold: {fold}, val: {val_tissue}')
 
         train_labels = labels.iloc[(labels['Tissue']!=val_tissue).tolist()]
         val_labels   = labels.iloc[(labels['Tissue']==val_tissue).tolist()]
@@ -419,7 +211,7 @@ if __name__=='__main__':
         )
 
         # Create data loaders.
-        batch_size = 120
+        batch_size = 160
         train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True, pin_memory=True, num_workers=8)
         val_dataloader   = DataLoader(val_data, batch_size=batch_size, pin_memory=True, num_workers=8)
 
@@ -436,7 +228,7 @@ if __name__=='__main__':
             scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
             Trn = trainer.Trainer()
-            bestmodel_name = f'best_model_fold_{fold}_NoG_{num_of_Gaussian}' 
+            bestmodel_name = f'best_model_NoG_{num_of_Gaussian}' 
             logger.info(f'Fold: {fold}, NoG: {num_of_Gaussian}, Training {bestmodel_name}')
             val_loss_min, train_loss, df_loss = Trn.run(train_dataloader, val_dataloader, model, loss_func_mse, optimizer, scheduler, num_epochs=30)
             
