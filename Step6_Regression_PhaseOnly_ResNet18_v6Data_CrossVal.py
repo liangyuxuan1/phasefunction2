@@ -353,11 +353,14 @@ if __name__=='__main__':
     # imageCW_v4_fat, 500x500, training number = 200, mean = 0.0068, std = 0.3823
 
     # imageCW_v5, 500x500, number=1000, mean=0.0035, std=0.2197
-    meanPixelVal = 0.0035   # using statistics of all v5 data
-    stdPixelVal  = 0.2197
 
-    img_path = "imageCW_v5"
-    DataListFile = "DataListCW_v5.csv"
+    # Dataset V6, large phantom, mean = 0.0022, std = 0.2915
+
+    meanPixelVal = 0.0022   # using statistics of all v6 data
+    stdPixelVal  = 0.2915
+
+    img_path = "ImageCW_v6"
+    DataListFile = "TrainDataCW_v6_Results.csv"
     tmp_processed_data_dir = "temp_processed_data"
     checkpoint_path = 'training_results'
 
@@ -380,21 +383,13 @@ if __name__=='__main__':
     theta = np.arange(0, np.pi, 0.01)
     theta = torch.from_numpy(theta).to(device)
 
-    total_labels = pd.read_csv(os.path.join(img_path, DataListFile))
-    all_tissues = ['Surface', 'Lung', 'Kidney', 'Heart', 'Stomach', 'Liver', 'Tumor']
-    test_tissue = 'Tumor'
-    tissue_names = all_tissues.copy()
-    tissue_names.remove(test_tissue)
-    test_labels = total_labels.iloc[(total_labels['Tissue']=='Tumor').tolist()]
-    labels = total_labels.iloc[(total_labels['Tissue']!='Tumor').tolist()]
+    labels = pd.read_csv(os.path.join(img_path, DataListFile))
+    gV = pd.unique(labels['g'])
 
-    for fold, val_tissue in enumerate(tissue_names):
-        train_tissue = tissue_names.copy()
-        train_tissue.remove(val_tissue)
-        logger.info(f'Fold: {fold}, train: {train_tissue}, val: {val_tissue}')
-
-        train_labels = labels.iloc[(labels['Tissue']!=val_tissue).tolist()]
-        val_labels   = labels.iloc[(labels['Tissue']==val_tissue).tolist()]
+    for fold, g in enumerate(gV):
+        train_labels = labels.iloc[(labels['g']!=g).tolist()]
+        val_labels   = labels.iloc[(labels['g']==g).tolist()]
+        logger.info(f'Fold: {fold}, val: g={g}')
 
         if os.path.exists(tmp_processed_data_dir):
             shutil.rmtree( tmp_processed_data_dir ) 
@@ -419,12 +414,12 @@ if __name__=='__main__':
         )
 
         # Create data loaders.
-        batch_size = 120
+        batch_size = 160
         train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True, pin_memory=True, num_workers=8)
         val_dataloader   = DataLoader(val_data, batch_size=batch_size, pin_memory=True, num_workers=8)
 
-        df_loss_best = pd.DataFrame(columns=['NoG', 'Events', 'Fold', 'Error'])  # record num_of_Gaussian and the best model's train and validation error
-        for num_of_Gaussian in range(2, 11):
+        df_loss_best = pd.DataFrame(columns=['NoG', 'Events', 'Val_g', 'Error'])  # record num_of_Gaussian and the best model's train and validation error
+        for num_of_Gaussian in range(2, 13):
             # Define model
             model = Resnet18(num_classes=num_of_Gaussian*3)
             # model_struct = summary(model, (1, 500, 500), verbose=0)
@@ -440,8 +435,8 @@ if __name__=='__main__':
             logger.info(f'Fold: {fold}, NoG: {num_of_Gaussian}, Training {bestmodel_name}')
             val_loss_min, train_loss, df_loss = Trn.run(train_dataloader, val_dataloader, model, loss_func_mse, optimizer, scheduler, num_epochs=30)
             
-            train_result = {'NoG':num_of_Gaussian, 'Events':'Train', 'Fold':val_tissue, 'Error':train_loss}
-            val_result   = {'NoG':num_of_Gaussian, 'Events':'Validation', 'Fold':val_tissue, 'Error':val_loss_min}
+            train_result = {'NoG':num_of_Gaussian, 'Events':'Train', 'Val_g':g, 'Error':train_loss}
+            val_result   = {'NoG':num_of_Gaussian, 'Events':'Validation', 'Val_g':g, 'Error':val_loss_min}
             df_loss_best = df_loss_best.append(train_result, ignore_index=True)
             df_loss_best = df_loss_best.append(val_result, ignore_index=True)
 
