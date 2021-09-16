@@ -219,5 +219,15 @@ if __name__=='__main__':
                                                 model_dir=checkpoint_path, model_name=bestmodel_name)
     df_loss.to_csv(os.path.join(checkpoint_path, f'train_loss_run_x.csv'), index=False)
 
-    #---end of for cross-validation
+    fig, ax = plt.subplots(figsize=(6,4), dpi=100)
+    ax = sns.lineplot(x="Epoch", y="Error", hue='Events', data=df_loss)
+    ax.legend(title='', loc='upper right')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss (MSE)')
+
+    figFile = 'train_loss_run_x.png'
+    plt.savefig(figFile, bbox_inches='tight')
+    plt.show()
+
+    #---end of training
     print('Done')
