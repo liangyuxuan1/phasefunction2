@@ -5,8 +5,8 @@ import pandas as pd
 import os
 
 
-img_path = "ImageCW_v6"
-DataListFile = "TrainDataCW_v6_Results.csv"
+img_path = "ImageCW_v5"
+DataListFile = "TrainDataCW_v5_Results.csv"
 
 labels = pd.read_csv(os.path.join(img_path, DataListFile))
 
@@ -34,5 +34,9 @@ print(img_std)
 print('Done')
 
 # The results
+
 # 2021-09-13
 # Dataset V6, large phantom, mean = 0.0022, std = 0.2915
+
+# 2021-09-16
+# Dataset V5, large phantom, mean = 0.0039, std = 0.2198
