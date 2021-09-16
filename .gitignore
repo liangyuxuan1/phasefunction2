@@ -134,3 +134,4 @@ rawDataCW*/
 ImageCW*/
 *.zip
 *.pkl
+*.pt
