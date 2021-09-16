@@ -132,6 +132,7 @@ dmypy.json
 *.mco
 rawDataCW*/
 ImageCW*/
+training_results*/
 *.zip
 *.pkl
 *.pt
