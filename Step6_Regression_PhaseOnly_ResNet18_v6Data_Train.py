@@ -157,7 +157,7 @@ if __name__=='__main__':
 
     img_path = "ImageCW_v6"
     DataListFile = "TrainDataCW_v6_Results.csv"
-    checkpoint_path = 'training_results'
+    checkpoint_path = 'training_results_v6'
 
     if not os.path.exists(checkpoint_path):
         os.mkdir(checkpoint_path)
@@ -208,16 +208,17 @@ if __name__=='__main__':
     # logger.info('Model structure:\n {}'.format(model_struct_str))
 
     # optimizer = torch.optim.SGD(model.parameters(), lr=1e-3, momentum=0.9, weight_decay=5e-3)
-    optimizer = torch.optim.Adam(model.parameters(), lr=5e-4, weight_decay=5e-3)
+    optimizer = torch.optim.Adam(model.parameters(), lr=8e-4, weight_decay=5e-3)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
     Trn = trainer.Trainer()
     bestmodel_name = f'best_model_NoG_{num_of_Gaussian}_run_x' 
+    result_file_name = 'train_loss_run_x'
     logger.info(f'NoG: {num_of_Gaussian}, Training {bestmodel_name}')
     val_loss_min, train_loss, df_loss = Trn.run(train_dataloader, val_dataloader, model, loss_func_mse, 
-                                                optimizer, scheduler, num_epochs=30,
+                                                optimizer, scheduler, num_epochs=40,
                                                 model_dir=checkpoint_path, model_name=bestmodel_name)
-    df_loss.to_csv(os.path.join(checkpoint_path, f'train_loss_run_x.csv'), index=False)
+    df_loss.to_csv(os.path.join(checkpoint_path, f'{result_file_name}.csv'), index=False)
 
     fig, ax = plt.subplots(figsize=(6,4), dpi=100)
     ax = sns.lineplot(x="Epoch", y="Error", hue='Events', data=df_loss)
@@ -225,7 +226,7 @@ if __name__=='__main__':
     plt.xlabel('Epoch')
     plt.ylabel('Loss (MSE)')
 
-    figFile = 'train_loss_run_x.png'
+    figFile = os.path.join(checkpoint_path, f'{result_file_name}.png')
     plt.savefig(figFile, bbox_inches='tight')
     plt.show()
 
