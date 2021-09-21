@@ -98,7 +98,7 @@ def GMM(nnOut, theta):
     for i in range(bSize):
         for j in range(num_of_Gaussian):
             gmm[i,:] += (w[i, j]/w_sum[i]) * normfun(theta, m[i, j], d[i, j])
-        sumGmm = torch.sum(gmm[i,:]) * 0.01     # discretization bin = 0.01 radian
+        sumGmm = torch.sum(gmm[i,:]) * theta[1]     # discretization bin = pi/len(theta) radian
         gmm[i,:] /= sumGmm      # normalize to gurrantee the sum=1
     return gmm
 
@@ -154,17 +154,27 @@ if __name__=='__main__':
 
     # Dataset V6, large phantom, mean = 0.0022, std = 0.2915
 
-    # Dataset MCML, mean = 0.0043, std = 0.5354
-    
-    meanPixelVal = 0.0043   # using statistics of all MCML train data
-    stdPixelVal  = 0.5354
+    # 2021-09-20
+    # g_train = [0.65, 0.75, 0.85, 0.95]
+    # g_val   = [0.6, 0.7, 0.8, 0.9]
+    # Dataset MCML 301x301, mean = 0.04312, std = 0.53543
+    # Dataset MCML 501x501, mean = 0.01565, std = 0.32234
 
-    train_img_path      = "ImageCW_Train"
-    train_DataListFile  = "TrainDataCW_MCML.csv"
-    val_img_path        = "ImageCW_Val"
-    val_DataListFile    = "ValDataCW_MCML.csv"
+    imgSize = 501
 
-    checkpoint_path = 'training_results_MCML'
+    meanPixelVal = 0.01565   
+    stdPixelVal  = 0.32234
+
+    if imgSize == 301:
+        meanPixelVal = 0.04312   
+        stdPixelVal  = 0.53543
+
+    train_img_path      = f"ImageCW_Train_{imgSize}"
+    train_DataListFile  = f"TrainDataCW_MCML_{imgSize}.csv"
+    val_img_path        = f"ImageCW_Val_{imgSize}"
+    val_DataListFile    = f"ValDataCW_MCML_{imgSize}.csv"
+
+    checkpoint_path = f'training_results_MCML_{imgSize}'
 
     if not os.path.exists(checkpoint_path):
         os.mkdir(checkpoint_path)
@@ -182,12 +192,12 @@ if __name__=='__main__':
     val_labels      = pd.read_csv(os.path.join(val_img_path, val_DataListFile))
 
     train_pickle_file_name  = 'train.pkl'
-    val_pickle_file_name    = 'test.pkl'
+    val_pickle_file_name    = 'val.pkl'
     
-    #print('Preprocessing...')
-    #DataPreprocessor().dump(train_labels, train_img_path, checkpoint_path, train_pickle_file_name, preprocessing_transformer)
-    #DataPreprocessor().dump(val_labels, val_img_path, checkpoint_path, val_pickle_file_name, preprocessing_transformer)
-    #print('Preprocessing finished')
+    print('Preprocessing...')
+    DataPreprocessor().dump(train_labels, train_img_path, checkpoint_path, train_pickle_file_name, preprocessing_transformer)
+    DataPreprocessor().dump(val_labels, val_img_path, checkpoint_path, val_pickle_file_name, preprocessing_transformer)
+    print('Preprocessing finished')
 
     train_data = CustomImageDataset_Pickle(
         img_labels = train_labels,
@@ -200,14 +210,17 @@ if __name__=='__main__':
     )
 
     # Create data loaders.
-    batch_size = 400
+    batch_size = 160
+    if imgSize == 301:
+        batch_size = 400
+
     train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True, pin_memory=True, num_workers=8)
     val_dataloader   = DataLoader(val_data, batch_size=batch_size, pin_memory=True, num_workers=8)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     logger.info(f"Using {device} device")
 
-    theta = np.arange(0, np.pi, 0.01)
+    theta = np.arange(0, np.pi, 0.001)
     theta = torch.from_numpy(theta).to(device)
 
     df_loss_best = pd.DataFrame(columns=['NoG', 'Events', 'Error'])
@@ -215,11 +228,11 @@ if __name__=='__main__':
 
         # Define model
         model = Resnet18(num_classes=num_of_Gaussian*3)
-        # model_struct = summary(model, (1, 301, 301), verbose=0)
-        # model_struct_str = str(model_struct)
-        # logger.info('Model structure:\n {}'.format(model_struct_str))
+        model_struct = summary(model, (1, imgSize, imgSize), verbose=0)
+        model_struct_str = str(model_struct)
+        logger.info('Model structure:\n {}'.format(model_struct_str))
 
-        optimizer = torch.optim.SGD(model.parameters(), lr=1e-3, momentum=0.9, weight_decay=5e-3)
+        optimizer = torch.optim.SGD(model.parameters(), lr=5e-3, momentum=0.9, weight_decay=5e-3)
         # optimizer = torch.optim.Adam(model.parameters(), lr=5e-4, weight_decay=5e-3)
         scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
@@ -247,11 +260,11 @@ if __name__=='__main__':
         figFile = os.path.join(checkpoint_path, f'{result_file_name}.png')
         plt.savefig(figFile, bbox_inches='tight')
 
-        df_loss_best.to_csv(os.path.join(checkpoint_path, 'Train_Val_Results.csv'), index=False)
+        df_loss_best.to_csv(os.path.join(checkpoint_path, f'Train_Val_Results_{imgSize}.csv'), index=False)
 
     #---end of for num_of_Gaussian
     print(df_loss_best)
-    df_loss_best.to_csv(os.path.join(checkpoint_path, 'Train_Val_Results.csv'), index=False)
+    df_loss_best.to_csv(os.path.join(checkpoint_path, f'Train_Val_Results_{imgSize}.csv'), index=False)
 
 
     #---end of training
