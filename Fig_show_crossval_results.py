@@ -17,9 +17,11 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
-checkpoint_path = 'training_results_MCML_501'
+imgSize = 501
 
-files = glob.glob(os.path.join(checkpoint_path, 'Train_Val*.csv'))
+checkpoint_path = f'training_results_MCML_{imgSize}'
+
+files = glob.glob(os.path.join(checkpoint_path, 'Train_Val_Results*.csv'))
 df = pd.DataFrame()
 for file in files:
     df = df.append(pd.read_csv(file), ignore_index=True)
