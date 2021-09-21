@@ -17,9 +17,9 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
-checkpoint_path = 'training_results_MCML'
+checkpoint_path = 'training_results_MCML_501'
 
-df = pd.read_csv(os.path.join(checkpoint_path, 'Train_Val_Results.csv'))
+df = pd.read_csv(os.path.join(checkpoint_path, 'Train_Val_Results_501.csv'))
 
 df.insert(df.shape[1], 'AIC', 0)
 df.insert(df.shape[1], 'BIC', 0)
@@ -28,7 +28,7 @@ df.insert(df.shape[1], 'k', 0)  # number of NN free parameters
 
 df['k'] = 512 * df['NoG']*3 + df['NoG']*3
 df.loc[df['Events']=='Train', 'n'] = 11*4*200
-df.loc[df['Events']=='Validation', 'n'] = 11*3*40
+df.loc[df['Events']=='Validation', 'n'] = 11*4*40
 
 # https://en.wikipedia.org/wiki/Akaike_information_criterion
 # https://en.wikipedia.org/wiki/Bayesian_information_criterion
