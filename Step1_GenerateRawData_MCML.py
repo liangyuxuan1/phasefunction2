@@ -25,7 +25,7 @@ def generate_mci(parameters, gV, num_of_samples, filename):
                 fid.write(f'{tissue}_g{gi:>1d}_{i:>04d}.mco 	A	      	# output file name, ASCII.\n')
                 fid.write('10000000                  	# No. of photons\n')
                 fid.write('0.01	0.01               	    # dz, dr [cm]\n')
-                fid.write('10 150 10                	# No. of dz, dr, da.\n\n')
+                fid.write('10 250 10                	# No. of dz, dr, da.\n\n')
                 fid.write('1                        	# Number of layers\n')
                 fid.write('#n	mua	mus	g	d         	# One line for each layer\n')
                 fid.write('1                         	# n for medium above\n')
@@ -60,11 +60,15 @@ n  = 1.37               # refractive index, no need to vary for single layer sla
 trainNum = 200          # training number of runs (images) for each set of parameters
 valNum   = 40
 
-g_train = [0.6, 0.7, 0.8, 0.9]
-g_val   = [0.55, 0.65, 0.75, 0.85, 0.95]
+# train less and validation more leads to large validation error
+# g_train = [0.6, 0.7, 0.8, 0.9]
+# g_val   = [0.55, 0.65, 0.75, 0.85, 0.95]
 
-train_path  = 'RawData_MCML_Train'
-val_path    = 'RawData_MCML_Val'
+g_train = [0.65, 0.75, 0.85, 0.95]
+g_val   = [0.6, 0.7, 0.8, 0.9]
+
+train_path  = 'RawData_MCML_Train_501'
+val_path    = 'RawData_MCML_Val_501'
 
 if not os.path.exists(train_path):
     os.mkdir(train_path)
