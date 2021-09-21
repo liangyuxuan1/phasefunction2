@@ -21,12 +21,17 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
         os.mkdir(os.path.join(img_path, 'image'))
 
     datalist = pd.DataFrame(columns=['Image', 'ua', 'us', 'g', 'Tissue', 
-                                    'SpecularReflectance', 'Absorption', 'Reflectance', 'Transmittance', 'ImgSize', 'Error'])
+                                    'SpecularReflectance', 'Absorption', 'Reflectance', 'Transmittance', 'ImgSize', 'Outlier', 'OutlierPercent', 'Error'])
 
     files = sorted(glob.glob(os.path.join(data_path, '*.mco')))
     for mcofile in files:
         InParam = readMCO.readInParam(mcofile)
         Rd_xy   = readMCO.readImage(mcofile, InParam.ndr, 'Rd_xy')
+
+        total_W = np.sum(Rd_xy)
+        Rd_xy = Rd_xy[1:-1,1:-1]
+        outlier_W = np.abs(total_W - np.sum(Rd_xy))
+
         w, h = Rd_xy.shape
 
         print(mcofile)
@@ -39,7 +44,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
         if filename.find('0001') != -1:
             print('saving reflectance image ...')
             img = np.log10(Rd_xy + 1e-10)
-            isns.imshow(img, cmap='gist_heat', vmin=-10, vmax=2)
+            isns.imshow(img, cmap='gist_heat', vmin=-10, vmax=2, dx=InParam.dr, units='cm')
             plt.savefig(os.path.join(img_path, 'image', filename[:-3]+'png'), bbox_inches='tight')
             plt.close('all')
 
@@ -48,7 +53,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
                 'SpecularReflectance':InParam.SpecularReflectance,
                 'Absorption':InParam.AbsorbedFraction, 'Reflectance':InParam.DiffuseReflectance, 
                 'Transmittance':InParam.Transmittance,
-                'ImgSize':w, 'Error': 0}
+                'ImgSize':w, 'Outlier':outlier_W, 'OutlierPercent':100*outlier_W/total_W, 'Error': 0}
         datalist = datalist.append(pdRow, ignore_index=True)
 
     datalist.to_csv(os.path.join(img_path, dataListFile), index=False)
