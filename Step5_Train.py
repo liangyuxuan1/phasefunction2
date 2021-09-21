@@ -226,8 +226,8 @@ if __name__=='__main__':
         scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
         Trn = trainer.Trainer()
-        bestmodel_name      = f'best_model_run_{run}' 
-        result_file_name    = f'train_loss_run_{run}'
+        bestmodel_name      = f'best_model_NoG_{num_of_Gaussian}_run_{run}' 
+        result_file_name    = f'train_loss_NoG_{num_of_Gaussian}_run_{run}'
         logger.info(f'Run: {run}, Start training')
         train_loss, df_loss = Trn.train_only(train_dataloader, model, loss_func_mse, 
                                     optimizer, scheduler, num_epochs=30,
