@@ -4,6 +4,9 @@ import time
 import torch
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import seaborn_image as isns
 
 class Tester:
     """
@@ -20,29 +23,63 @@ class Tester:
 
         model.eval()
 
-        test_loss = pd.DataFrame(columns=['ua','us','g','Error'])
+        df = dataset.img_labels
         with torch.no_grad():
             for i in range(len(dataset)):
                 X, gt = dataset[i]
                 img = inverse_transform(X)
+                img = img.squeeze().numpy()
 
                 X = X.reshape(1,*X.shape)
                 gt = gt.reshape(1,-1)
                 X, y = X.to(device), gt.to(device)
                 pred = model(X)
-                loss = loss_fn(pred, y)
+                loss, pHG, pGMM = loss_fn(pred, y)
+                pHG, pGMM = pHG.to('cpu'), pGMM.to('cpu')
+                pHG, pGMM = pHG.squeeze(), pGMM.squeeze()
+                pHG, pGMM = pHG.numpy(), pGMM.numpy()
 
                 gt = gt.numpy()
-                test_loss = test_loss.append({'ua':gt[0,0],'us':gt[0,1], 'g':gt[0,2], 'Error':loss.item()}, ignore_index=True)
-                
-        return test_loss
+                df['Error'].iloc[i] = loss.item()
+
+                filename = df['Image'].iloc[i]
+
+                if save_fig:
+                    if filename.find('0001') != -1:
+                        print(f'Saving {filename},  Error: {loss.item()} ')
+
+                        fig = plt.figure(figsize=(8, 4))
+                        ua = df['ua'].iloc[i]
+                        us = df['us'].iloc[i]
+                        g  = df['g'].iloc[i]
+                        plt.axis("off")
+                        figtitle = 'ua=%.3f, us=%.2f, g=%.2f, Phase MSE=%.4f \n' %(ua, us, g, loss.item())
+                        plt.title(figtitle)
+
+                        fig.add_subplot(1, 2, 1)
+                        plt.axis("off")
+                        img = np.log10(img + np.abs(np.min(img)) + 1e-10)
+                        plt.imshow(img, cmap='gist_heat')
+
+                        fig.add_subplot(1, 2, 2)
+                        plt.axis("on")
+                        plt.plot(pHG, label='HG')
+                        plt.plot(pGMM, label='GMM')
+                        plt.legend()
+
+                        # plt.savefig(os.path.join(figure_path, filename[:-4]+'_phase.png'), bbox_inches='tight')
+                        plt.savefig(os.path.join(figure_path, filename[:-3]+'png'), bbox_inches='tight')
+
+                        plt.close('all')
+                        
+        return df
 
     def run(self, dataset, network, loss_func, model_dir, model_name, inverse_transform, figure_path_name=None, device=None):
         if figure_path_name is None:
             save_fig = False
             figure_path = ''
         else:
-            save_Fig = True
+            save_fig = True
             figure_path = os.path.join(model_dir, figure_path_name)
 
         # Determine device use GPU if available
