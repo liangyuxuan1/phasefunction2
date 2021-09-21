@@ -252,7 +252,7 @@ if __name__=='__main__':
             # bestmodel_name      = f'best_model_NoG_{num_of_Gaussian}' 
             result_file_name    = f'train_loss_fold_{fold}_NoG_{num_of_Gaussian}'
             logger.info(f'Fold: {fold}, NoG: {num_of_Gaussian}, Start training')
-            val_loss_min, train_loss, df_loss = Trn.run(train_dataloader, val_dataloader, model, loss_func_mse, 
+            val_loss_min, train_loss, df_loss = Trn.train_and_val(train_dataloader, val_dataloader, model, loss_func_mse, 
                                                         optimizer, scheduler, num_epochs=30)
 
             train_result = {'Fold':fold, 'NoG':num_of_Gaussian, 'Events':'Train', 'Error':train_loss}
