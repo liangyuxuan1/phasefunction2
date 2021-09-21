@@ -170,34 +170,25 @@ if __name__=='__main__':
 
     test_img_path       = f"ImageCW_Val_{imgSize}"
     test_DataListFile   = f"ValDataCW_MCML_{imgSize}.csv"
-    val_img_path        = f"ImageCW_Val_{imgSize}"
-    val_DataListFile    = f"ValDataCW_MCML_{imgSize}.csv"
 
     checkpoint_path     = f'training_results_MCML_{imgSize}'
-    model_name = 'best_model_NoG_10.pt'
-    num_of_Gaussian = 10  # according to the training and validation results
+    model_name = 'best_model_run_1.pt'
+    num_of_Gaussian = 9  # according to the training and validation results
 
     preprocessing_transformer = transforms.Normalize(meanPixelVal, stdPixelVal)
     inverse_preprocessing_transformer = transforms.Normalize(-meanPixelVal, 1.0/stdPixelVal)
 
     test_labels     = pd.read_csv(os.path.join(test_img_path, test_DataListFile))
-    val_labels      = pd.read_csv(os.path.join(val_img_path, val_DataListFile))
 
     test_pickle_file_name  = 'test.pkl'
-    val_pickle_file_name   = 'val.pkl'
     
-    print('Preprocessing...')
-    # DataPreprocessor().dump(test_labels, test_img_path, checkpoint_path, test_pickle_file_name, preprocessing_transformer)
-    # DataPreprocessor().dump(val_labels, val_img_path, checkpoint_path, val_pickle_file_name, preprocessing_transformer)
-    print('Preprocessing finished')
+    #print('Preprocessing...')
+    #DataPreprocessor().dump(test_labels, test_img_path, checkpoint_path, test_pickle_file_name, preprocessing_transformer)
+    #print('Preprocessing finished')
 
     test_data = CustomImageDataset_Pickle(
         img_labels = test_labels,
         file_preprocessed = os.path.join(checkpoint_path, test_pickle_file_name)
-    )
-    val_data = CustomImageDataset_Pickle(
-        img_labels = val_labels,
-        file_preprocessed = os.path.join(checkpoint_path, val_pickle_file_name)
     )
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -212,15 +203,6 @@ if __name__=='__main__':
     print(f'NoG: {num_of_Gaussian}, Start testing')
     df_loss = Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing')
 
-    df_loss.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}.csv'), index=False)
-
-    fig, ax = plt.subplots(figsize=(6,4), dpi=100)
-    ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df_loss)
-    ax.legend(title='', loc='upper left')
-    plt.xlabel('Anistropy Factor')
-    plt.ylabel('Loss (MSE)')
-
-    figFile = os.path.join(checkpoint_path, f'Test_Results_{imgSize}.png')
-    plt.savefig(figFile, bbox_inches='tight')
+    df_loss.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}.csv'))
 
     print('Done')
