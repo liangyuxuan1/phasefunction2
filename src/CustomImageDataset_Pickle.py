@@ -15,9 +15,9 @@ class CustomImageDataset_Pickle(Dataset):
 
     def __getitem__(self, idx):
         image = self.images[idx]
-        ua = self.img_labels.iloc[idx, 1]    # 1: ua value
-        us = self.img_labels.iloc[idx, 2]    # 2: us value
-        g = self.img_labels.iloc[idx, 3]     # 3: g value
+        ua = self.img_labels['ua'].iloc[idx]
+        us = self.img_labels['us'].iloc[idx]
+        g = self.img_labels['g'].iloc[idx]
 
         gt = torch.tensor([ua, us, g])
         gt = gt.float()
