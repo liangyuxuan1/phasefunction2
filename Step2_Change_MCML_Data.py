@@ -20,7 +20,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
     if not os.path.exists(os.path.join(img_path, 'image')):
         os.mkdir(os.path.join(img_path, 'image'))
 
-    datalist = pd.DataFrame(columns=['Image', 'ua', 'us', 'g', 'Tissue', 
+    datalist = pd.DataFrame(columns=['Image', 'ua', 'us', 'g', 'Tissue', 'dr', 'ndr',
                                     'SpecularReflectance', 'Absorption', 'Reflectance', 'Transmittance', 'ImgSize', 'Outlier', 'OutlierPercent', 'Error'])
 
     files = sorted(glob.glob(os.path.join(data_path, '*.mco')))
@@ -49,7 +49,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
             plt.close('all')
 
         pdRow = {'Image':filename, 'ua':InParam.mua, 'us':InParam.mus, 'g':InParam.g, 
-                'Tissue':tissue,  
+                'Tissue':tissue, 'dr':InParam.dr, 'ndr':InParam.ndr, 
                 'SpecularReflectance':InParam.SpecularReflectance,
                 'Absorption':InParam.AbsorbedFraction, 'Reflectance':InParam.DiffuseReflectance, 
                 'Transmittance':InParam.Transmittance,
@@ -61,14 +61,16 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
 # ==================================================================
 if __name__=='__main__':
 
-    src_path        = "RawData_MCML_Train_501"
-    dst_path        = "ImageCW_Train_501"
-    outputFile      = "TrainDataCW_MCML_501.csv"
+    imgSize = 251
+
+    src_path        = f"RawData_MCML_Train_{imgSize}"
+    dst_path        = f"ImageCW_Train_{imgSize}"
+    outputFile      = f"TrainDataCW_MCML_{imgSize}.csv"
     changeMCML_rawData(data_path=src_path, img_path=dst_path, dataListFile=outputFile)
 
-    src_path        = "RawData_MCML_Val_501"
-    dst_path        = "ImageCW_Val_501"
-    outputFile      = "ValDataCW_MCML_501.csv"
+    src_path        = f"RawData_MCML_Val_{imgSize}"
+    dst_path        = f"ImageCW_Val_{imgSize}"
+    outputFile      = f"ValDataCW_MCML_{imgSize}.csv"
     changeMCML_rawData(data_path=src_path, img_path=dst_path, dataListFile=outputFile)
 
     print('done')
