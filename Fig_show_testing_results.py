@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
-imgSize = 501
+imgSize = 301
 
 checkpoint_path = f'training_results_MCML_{imgSize}'
 
