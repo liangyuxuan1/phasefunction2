@@ -48,7 +48,7 @@ class Tester:
                     if filename.find('0001') != -1:
                         print(f'Saving {filename},  Error: {loss.item()} ')
 
-                        fig = plt.figure(figsize=(8, 4))
+                        fig = plt.figure(figsize=(10, 4))
                         ua = df['ua'].iloc[i]
                         us = df['us'].iloc[i]
                         g  = df['g'].iloc[i]
@@ -56,15 +56,17 @@ class Tester:
                         figtitle = 'ua=%.3f, us=%.2f, g=%.2f, Phase MSE=%.4f \n' %(ua, us, g, loss.item())
                         plt.title(figtitle)
 
-                        fig.add_subplot(1, 2, 1)
+                        ax1 = fig.add_subplot(1, 2, 1)
                         plt.axis("off")
                         img = np.log10(img + np.abs(np.min(img)) + 1e-10)
-                        plt.imshow(img, cmap='gist_heat')
+                        # plt.imshow(img, cmap='gist_heat')
+                        isns.imshow(img, ax=ax1, cmap='gist_heat', vmin=-10, vmax=2, dx=df['dr'].iloc[i], units='cm')
 
                         fig.add_subplot(1, 2, 2)
                         plt.axis("on")
-                        plt.plot(pHG, label='HG')
-                        plt.plot(pGMM, label='GMM')
+                        theta = np.arange(0, np.pi, 0.001)
+                        plt.plot(theta, pHG, label='HG')
+                        plt.plot(theta, pGMM, label='GMM')
                         plt.legend()
 
                         # plt.savefig(os.path.join(figure_path, filename[:-4]+'_phase.png'), bbox_inches='tight')
