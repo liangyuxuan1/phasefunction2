@@ -75,7 +75,7 @@ def HG_theta(g, theta):
     bSize = g.size()[0] 
     p = torch.zeros(bSize, theta.size()[0]).cuda()
     for i in range(bSize):
-        p[i,:] = 0.5*(1-g[i]*g[i])/((1+g[i]*g[i]-2*g[i]*torch.cos(theta))**(3.0/2.0) + 1e-6)
+        p[i,:] = 0.5*(1-g[i]*g[i])/((1+g[i]*g[i]-2*g[i]*torch.cos(theta))**(3.0/2.0))
         p[i,:] *= torch.sin(theta)
         # print(torch.sum(p[i,:]))
     return p
@@ -160,6 +160,7 @@ if __name__=='__main__':
     # g_val   = [0.6, 0.7, 0.8, 0.9]
     # Dataset MCML 301x301 (299x299), mean = 0.04370, std = 0.53899
     # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
+    # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
     imgSize = 501
 
@@ -170,6 +171,10 @@ if __name__=='__main__':
         meanPixelVal = 0.04370   
         stdPixelVal  = 0.53899
 
+    if imgSize == 251:
+        meanPixelVal = 0.01584   
+        stdPixelVal  = 0.30017
+    
     train_img_path      = f"ImageCW_Train_{imgSize}"
     train_DataListFile  = f"TrainDataCW_MCML_{imgSize}.csv"
     # val_img_path        = f"ImageCW_Val_{imgSize}"

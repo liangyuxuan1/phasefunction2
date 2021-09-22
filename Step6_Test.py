@@ -73,7 +73,7 @@ def HG_theta(g, theta):
     bSize = g.size()[0] 
     p = torch.zeros(bSize, theta.size()[0]).cuda()
     for i in range(bSize):
-        p[i,:] = 0.5*(1-g[i]*g[i])/((1+g[i]*g[i]-2*g[i]*torch.cos(theta))**(3.0/2.0) + 1e-6)
+        p[i,:] = 0.5*(1-g[i]*g[i])/((1+g[i]*g[i]-2*g[i]*torch.cos(theta))**(3.0/2.0))
         p[i,:] *= torch.sin(theta)
         # print(torch.sum(p[i,:]))
     return p
@@ -158,8 +158,11 @@ if __name__=='__main__':
     # g_val   = [0.6, 0.7, 0.8, 0.9]
     # Dataset MCML 301x301 (299x299), mean = 0.04370, std = 0.53899
     # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
+    # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
     imgSize = 501
+    num_of_Gaussian = 9  # according to the training and validation results
+    model_name = 'best_model_NoG_9_run_2.pt'    # 501
 
     meanPixelVal = 0.01578   
     stdPixelVal  = 0.32363
@@ -167,13 +170,16 @@ if __name__=='__main__':
     if imgSize == 301:
         meanPixelVal = 0.04370   
         stdPixelVal  = 0.53899
+        model_name = 'best_model_NoG_9_run_1.pt'    # 301
+
+    if imgSize == 251:
+        meanPixelVal = 0.01584   
+        stdPixelVal  = 0.30017
 
     test_img_path       = f"ImageCW_Val_{imgSize}"
     test_DataListFile   = f"ValDataCW_MCML_{imgSize}.csv"
 
     checkpoint_path     = f'training_results_MCML_{imgSize}'
-    model_name = 'best_model_run_1.pt'
-    num_of_Gaussian = 9  # according to the training and validation results
 
     preprocessing_transformer = transforms.Normalize(meanPixelVal, stdPixelVal)
     inverse_preprocessing_transformer = transforms.Normalize(-meanPixelVal, 1.0/stdPixelVal)
@@ -182,9 +188,9 @@ if __name__=='__main__':
 
     test_pickle_file_name  = 'test.pkl'
     
-    #print('Preprocessing...')
-    #DataPreprocessor().dump(test_labels, test_img_path, checkpoint_path, test_pickle_file_name, preprocessing_transformer)
-    #print('Preprocessing finished')
+    print('Preprocessing...')
+    DataPreprocessor().dump(test_labels, test_img_path, checkpoint_path, test_pickle_file_name, preprocessing_transformer)
+    print('Preprocessing finished')
 
     test_data = CustomImageDataset_Pickle(
         img_labels = test_labels,
