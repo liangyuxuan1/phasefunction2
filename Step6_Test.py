@@ -160,7 +160,7 @@ if __name__=='__main__':
     # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
-    imgSize = 501
+    imgSize = 251
     num_of_Gaussian = 9  # according to the training and validation results
     model_name = 'best_model_NoG_9_run_2.pt'    # 501
 
@@ -175,6 +175,7 @@ if __name__=='__main__':
     if imgSize == 251:
         meanPixelVal = 0.01584   
         stdPixelVal  = 0.30017
+        model_name = 'best_model_NoG_9_run_1.pt'    # 301
 
     test_img_path       = f"ImageCW_Val_{imgSize}"
     test_DataListFile   = f"ValDataCW_MCML_{imgSize}.csv"
