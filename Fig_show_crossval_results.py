@@ -18,8 +18,11 @@ from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
 imgSize = 501
-
 checkpoint_path = f'training_results_MCML_{imgSize}'
+
+output_path = 'testing_results'
+if not os.path.exists(output_path):
+    os.mkdir(output_path)
 
 files = glob.glob(os.path.join(checkpoint_path, 'Train_Val_Results*.csv'))
 df = pd.DataFrame()
@@ -96,7 +99,7 @@ plt.plot(np.nan, color='tab:blue', label = 'AIC')
 plt.plot(np.nan, color='tab:orange', label = 'BIC')
 plt.legend()
 
-figFile = os.path.join(checkpoint_path, 'Fig_AIC_BIC.png')
+figFile = os.path.join(output_path, f'Fig_AIC_BIC_{imgSize}.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
@@ -112,7 +115,7 @@ lgd.set_title('')
 plt.ylabel('Phase Error')
 plt.xlabel('Number of Gaussian Components')
 
-figFile = os.path.join(checkpoint_path, 'Fig_Cross_Val.png')
+figFile = os.path.join(output_path, f'Fig_Cross_Val_{imgSize}.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
