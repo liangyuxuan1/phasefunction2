@@ -160,18 +160,21 @@ if __name__=='__main__':
     # Dataset MCML 301x301 (299x299), mean = 0.04370, std = 0.53899
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
-    imgSize = 501
+    imgSize = 251
 
     meanPixelVal = 0.01578   
     stdPixelVal  = 0.32363
+    batch_size = 160
 
     if imgSize == 301:
         meanPixelVal = 0.04370   
         stdPixelVal  = 0.53899
+        batch_size = 160
 
     if imgSize == 251:
         meanPixelVal = 0.01584   
         stdPixelVal  = 0.30017
+        batch_size = 160
 
     train_img_path      = f"ImageCW_Train_{imgSize}"
     train_DataListFile  = f"TrainDataCW_MCML_{imgSize}.csv"
@@ -204,10 +207,6 @@ if __name__=='__main__':
     )
 
     # Create data loaders.
-    batch_size = 160
-    if imgSize == 301:
-        batch_size = 400
-
     train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True, pin_memory=True, num_workers=8)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
