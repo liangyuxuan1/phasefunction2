@@ -160,22 +160,33 @@ if __name__=='__main__':
     # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
-    imgSize = 251
-    num_of_Gaussian = 9  # according to the training and validation results
-    model_name = 'best_model_NoG_9_run_2.pt'    # 501
+    imgSize = 301
 
-    meanPixelVal = 0.01578   
-    stdPixelVal  = 0.32363
+    if imgSize == 501:
+        num_of_Gaussian = 9  # according to the training and validation results
+        model_name = 'best_model_NoG_9_run_2.pt'  
+        meanPixelVal = 0.01578   
+        stdPixelVal  = 0.32363
 
     if imgSize == 301:
+        num_of_Gaussian = 9  # according to the training and validation results
         meanPixelVal = 0.04370   
         stdPixelVal  = 0.53899
-        model_name = 'best_model_NoG_9_run_1.pt'    # 301
+        model_name = 'best_model_NoG_9_run_2.pt'  
 
     if imgSize == 251:
+        num_of_Gaussian = 8  # done on 2019.9.23
         meanPixelVal = 0.01584   
         stdPixelVal  = 0.30017
-        model_name = 'best_model_NoG_9_run_1.pt'    # 301
+        model_name = 'best_model_NoG_8_run_1.pt'  
+
+    if imgSize == 101:
+        num_of_Gaussian = 7     # TBD
+        meanPixelVal = 0.36190   
+        stdPixelVal  = 1.59218
+        batch_size = 160
+        model_name = 'best_model_NoG_7_run_1.pt'  
+
 
     test_img_path       = f"ImageCW_Val_{imgSize}"
     test_DataListFile   = f"ValDataCW_MCML_{imgSize}.csv"

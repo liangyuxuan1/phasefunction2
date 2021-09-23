@@ -159,22 +159,33 @@ if __name__=='__main__':
     # g_val   = [0.6, 0.7, 0.8, 0.9]
     # Dataset MCML 301x301 (299x299), mean = 0.04370, std = 0.53899
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
+    # Dataset MCML 101x101 (99x99),   mean = 0.36190, std = 1.59218
 
-    imgSize = 251
+    imgSize = 101
 
-    meanPixelVal = 0.01578   
-    stdPixelVal  = 0.32363
-    batch_size = 160
+    if imgSize == 501:
+        meanPixelVal = 0.01578   
+        stdPixelVal  = 0.32363
+        batch_size = 160
+        num_of_Gaussian = 9
 
     if imgSize == 301:
         meanPixelVal = 0.04370   
         stdPixelVal  = 0.53899
         batch_size = 160
+        num_of_Gaussian = 9     # TBD
 
     if imgSize == 251:
         meanPixelVal = 0.01584   
         stdPixelVal  = 0.30017
         batch_size = 160
+        num_of_Gaussian = 8     # done on 2021.9.23
+
+    if imgSize == 101:
+        meanPixelVal = 0.36190   
+        stdPixelVal  = 1.59218
+        batch_size = 160
+        num_of_Gaussian = 7     # TBD
 
     train_img_path      = f"ImageCW_Train_{imgSize}"
     train_DataListFile  = f"TrainDataCW_MCML_{imgSize}.csv"
@@ -216,7 +227,6 @@ if __name__=='__main__':
     theta = torch.from_numpy(theta).to(device)
 
     df_loss_best = pd.DataFrame(columns=['Run', 'Events', 'Error'])
-    num_of_Gaussian = 9
     for run in range(1,6):
         # Define model
         model = Resnet18(num_classes=num_of_Gaussian*3)
