@@ -41,7 +41,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
         _, filename = mcofile.split(os.path.sep)
         tissue = filename.split('_')[0]
 
-        beamWidth = 0.05 # cm
+        beamWidth = 0.03 # cm
         bw = int(beamWidth/InParam.dr)
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (bw,bw))
         kernel = kernel.astype(float)
@@ -57,7 +57,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
             plt.savefig(os.path.join(img_path, 'image', filename[:-3]+'png'), bbox_inches='tight')
             plt.close('all')
             
-            profiles = np.concatenate((profiles, Rd_xy[InParam.ndr, :]))
+            profiles = np.concatenate((profiles, img[InParam.ndr, :]))
             ax = np.arange(-InParam.ndr+1, InParam.ndr)*InParam.dr
 
         pdRow = {'Image':filename, 'ua':InParam.mua, 'us':InParam.mus, 'g':InParam.g, 
