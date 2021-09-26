@@ -160,7 +160,7 @@ if __name__=='__main__':
     # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
-    imgSize = 301
+    imgSize = 41
 
     if imgSize == 501:
         num_of_Gaussian = 9  # according to the training and validation results
@@ -187,6 +187,12 @@ if __name__=='__main__':
         batch_size = 160
         model_name = 'best_model_NoG_7_run_1.pt'  
 
+    if imgSize == 41:
+        num_of_Gaussian = 6     # TBD
+        meanPixelVal = 1.69022   
+        stdPixelVal  = 3.75663
+        batch_size = 160
+        model_name = 'best_model_NoG_6_run_2.pt'  
 
     test_img_path       = f"ImageCW_Val_{imgSize}"
     test_DataListFile   = f"ValDataCW_MCML_{imgSize}.csv"

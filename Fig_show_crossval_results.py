@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
-imgSize = 501
+imgSize = 251
 checkpoint_path = f'training_results_MCML_{imgSize}'
 
 output_path = 'testing_results'
@@ -109,10 +109,11 @@ plt.show()
 # https://stackoverflow.com/questions/43151440/remove-seaborn-barplot-legend-title
 
 fig, ax = plt.subplots(figsize=(8,4))
-sns.pointplot(data=df, x='NoG', y='Error', hue='Events', capsize=0.1, errwidth=1)
+sns.pointplot(data=df, x='NoG', y='Error', hue='Events', markers='.', capsize=0.1, errwidth=1)
+# ax = sns.lineplot(x="NoG", y="Error", hue="Events", style='Events', data=df, markers=True, dashes=False)
 lgd = ax.legend()
 lgd.set_title('')
-plt.ylabel('Phase Error')
+plt.ylabel('MSE')
 plt.xlabel('Number of Gaussian Components')
 
 figFile = os.path.join(output_path, f'Fig_Cross_Val_{imgSize}.png')

@@ -132,6 +132,7 @@ dmypy.json
 *.mco
 rawDataCW*/
 ImageCW*/
+images_testing/
 *.zip
 *.pkl
 *.pt

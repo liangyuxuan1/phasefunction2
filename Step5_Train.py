@@ -160,8 +160,9 @@ if __name__=='__main__':
     # Dataset MCML 301x301 (299x299), mean = 0.04370, std = 0.53899
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
     # Dataset MCML 101x101 (99x99),   mean = 0.36190, std = 1.59218
+    # Dataset MCML 41x41   (39x39),   mean = 1.69022, std = 3.75663
 
-    imgSize = 101
+    imgSize = 41
 
     if imgSize == 501:
         meanPixelVal = 0.01578   
@@ -186,6 +187,14 @@ if __name__=='__main__':
         stdPixelVal  = 1.59218
         batch_size = 160
         num_of_Gaussian = 7     # TBD
+
+    # Dataset MCML 41x41   (39x39),   mean = 1.69022, std = 3.75663
+    if imgSize == 41:
+        meanPixelVal = 1.69022   
+        stdPixelVal  = 3.75663
+        batch_size = 160
+        num_of_Gaussian = 6     # TBD
+    
 
     train_img_path      = f"ImageCW_Train_{imgSize}"
     train_DataListFile  = f"TrainDataCW_MCML_{imgSize}.csv"

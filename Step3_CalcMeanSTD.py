@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 import os
 
-img_path = "ImageCW_Train_101"
-DataListFile = "TrainDataCW_MCML_101.csv"
+img_path = "ImageCW_Train_41"
+DataListFile = "TrainDataCW_MCML_41.csv"
 
 labels = pd.read_csv(os.path.join(img_path, DataListFile))
 
@@ -41,6 +41,7 @@ print('Done')
 # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
 # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 # Dataset MCML 101x101 (99x99),   mean = 0.36190, std = 1.59218
+# Dataset MCML 41x41   (39x39),   mean = 1.69022, std = 3.75663
 
 
 # not used 
