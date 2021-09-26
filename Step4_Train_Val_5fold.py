@@ -162,7 +162,7 @@ if __name__=='__main__':
     # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
-    imgSize = 251
+    imgSize = 101
 
     batch_size = 160
     meanPixelVal = 0.01578   
