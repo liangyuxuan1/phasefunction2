@@ -162,11 +162,41 @@ if __name__=='__main__':
     # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
+    # 2021-09-27 new dataset at resolution 0.002
+    # 401x401 (399x399), 0.8cm x 0.8 cm, mean = 0.53076, std = 2.29144
+    # 201x201 (199x199), 0.4cm x 0.4 cm, mean = 1.64004, std = 4.40112
+    # 101x101 (99x99),   0.2cm x 0.2 cm, mean = 4.20267, std = 8.26528
+    # 51x51   (49x49),   0.1cm x 0.1 cm, mean = 9.19103, std = 15.37926
+
     imgSize = 101
 
-    batch_size = 160
-    meanPixelVal = 0.01578   
-    stdPixelVal  = 0.32363
+    # resolution = 0.002
+    if imgSize == 401:
+        meanPixelVal = 0.53076   
+        stdPixelVal  = 2.29144
+        batch_size = 220
+
+    if imgSize == 201:
+        meanPixelVal = 1.64004   
+        stdPixelVal  = 4.40112
+        batch_size   = 220
+
+    if imgSize == 101:
+        meanPixelVal = 4.20267   
+        stdPixelVal  = 8.26528
+        batch_size   = 220
+
+    if imgSize == 51:
+        meanPixelVal = 9.19103   
+        stdPixelVal  = 15.37926
+        batch_size = 220
+
+
+    '''
+    if imgSize == 501:
+        meanPixelVal = 0.01578   
+        stdPixelVal  = 0.32363
+        batch_size = 160
 
     if imgSize == 301:
         meanPixelVal = 0.04370   
@@ -182,7 +212,8 @@ if __name__=='__main__':
         meanPixelVal = 0.36190   
         stdPixelVal  = 1.59218
         batch_size = 160
-    
+    '''
+
     train_img_path      = f"ImageCW_Train_{imgSize}"
     train_DataListFile  = f"TrainDataCW_MCML_{imgSize}.csv"
     # val_img_path        = f"ImageCW_Val_{imgSize}"
