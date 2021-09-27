@@ -46,8 +46,8 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (bw,bw))
         kernel = kernel.astype(float)
         kernel /= np.sum(kernel)
-        img = cv2.filter2D(Rd_xy, -1, kernel)
-        # img = Rd_xy
+        #img = cv2.filter2D(Rd_xy, -1, kernel)
+        img = Rd_xy
 
         np.save(os.path.join(img_path, filename), img)
 
@@ -82,10 +82,10 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
 # ==================================================================
 if __name__=='__main__':
 
-    imgSize = 101
+    imgSize = 51
 
     src_path        = f"RawData_MCML_Train_{imgSize}"
-    dst_path        = f"ImageCW_Train_{imgSize}_2"
+    dst_path        = f"ImageCW_Train_{imgSize}"
     outputFile      = f"TrainDataCW_MCML_{imgSize}.csv"
     changeMCML_rawData(data_path=src_path, img_path=dst_path, dataListFile=outputFile)
 
@@ -101,7 +101,7 @@ if __name__=='__main__':
     '''
 
     src_path        = f"RawData_MCML_Val_{imgSize}"
-    dst_path        = f"ImageCW_Val_{imgSize}_2"
+    dst_path        = f"ImageCW_Val_{imgSize}"
     outputFile      = f"ValDataCW_MCML_{imgSize}.csv"
     changeMCML_rawData(data_path=src_path, img_path=dst_path, dataListFile=outputFile)
 
