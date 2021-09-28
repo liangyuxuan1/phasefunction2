@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 import os
 
-img_path = "ImageCW_Train_51"
-DataListFile = "TrainDataCW_MCML_51.csv"
+img_path = "ImageCW_Train_100"
+DataListFile = "TrainDataCW_MCML_100.csv"
 
 labels = pd.read_csv(os.path.join(img_path, DataListFile))
 
@@ -34,6 +34,15 @@ print('Done')
 
 # The results
 
+# 2021-09-28
+# 301, dr=0.002, ndr=150, FoV=0.6x0.6, mean = 0.86591, std = 3.01413
+# 201, dr=0.002, ndr=100, FoV=0.4x0.4, mean = 1.64004, std = 4.40112
+# 101, dr=0.002, ndr=50,  FoV=0.2x0.2, mean = 4.20267, std = 8.26528
+# 401, dr=0.001, ndr=200, FoV=0.4x0.4, mean = 1.63391, std = 4.67807
+# 100, dr=0.004, ndr=50,  FoV=0.4x0.4, mean = 1.65235, std = 4.12344
+
+
+
 # 2021-09-21
 # g_train = [0.65, 0.75, 0.85, 0.95]
 # g_val   = [0.6, 0.7, 0.8, 0.9]
@@ -48,7 +57,6 @@ print('Done')
 # 201x201 (199x199), 0.4cm x 0.4 cm, mean = 1.64004, std = 4.40112
 # 101x101 (99x99),   0.2cm x 0.2 cm, mean = 4.20267, std = 8.26528
 # 51x51   (49x49),   0.1cm x 0.1 cm, mean = 9.19103, std = 15.37926
-
 
 # not used 
 # g_train = [0.6, 0.7, 0.8, 0.9]
