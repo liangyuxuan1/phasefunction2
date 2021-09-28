@@ -58,9 +58,9 @@ class Tester:
 
                         ax1 = fig.add_subplot(1, 2, 1)
                         plt.axis("off")
-                        img = np.log10(img + np.abs(np.min(img)) + 1e-10)
+                        # img = np.log10(img + np.abs(np.min(img)) + 1e-10)
                         # plt.imshow(img, cmap='gist_heat')
-                        isns.imshow(img, ax=ax1, cmap='gist_heat', vmin=-10, vmax=2, dx=df['dr'].iloc[i], units='cm')
+                        isns.imshow(img, ax=ax1, cmap='gist_heat', vmin=0, dx=df['dr'].iloc[i], units='cm')
 
                         fig.add_subplot(1, 2, 2)
                         plt.axis("on")
