@@ -48,13 +48,13 @@ class Tester:
                     if filename.find('0001') != -1:
                         print(f'Saving {filename},  Error: {loss.item()} ')
 
-                        fig = plt.figure(figsize=(10, 4))
+                        fig, ax = plt.subplots(figsize=(10, 4), dpi=300)
                         ua = df['ua'].iloc[i]
                         us = df['us'].iloc[i]
                         g  = df['g'].iloc[i]
                         plt.axis("off")
                         figtitle = 'ua=%.3f, us=%.3f, g=%.2f, MSE=%.6f\n' %(ua, us, g, loss.item())
-                        plt.title(figtitle)
+                        ax.set_title(figtitle)
 
                         ax1 = fig.add_subplot(1, 2, 1)
                         plt.axis("off")
@@ -71,6 +71,10 @@ class Tester:
                         plt.legend()
 
                         plt.savefig(os.path.join(figure_path, filename[:-3]+'png'), bbox_inches='tight')
+
+                        ax.set_title('')
+                        plt.savefig(os.path.join(figure_path, filename[:-4]+'_notitle.png'), bbox_inches='tight')
+
 
                         # save individual parts
                         fig, ax = plt.subplots(figsize=(4,3), dpi=300)
