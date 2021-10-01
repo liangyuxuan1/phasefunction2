@@ -53,14 +53,15 @@ class Tester:
                         us = df['us'].iloc[i]
                         g  = df['g'].iloc[i]
                         plt.axis("off")
-                        figtitle = 'ua=%.3f, us=%.2f, g=%.2f, Phase MSE=%.4f \n' %(ua, us, g, loss.item())
+                        figtitle = 'ua=%.3f, us=%.3f, g=%.2f, MSE=%.6f\n' %(ua, us, g, loss.item())
                         plt.title(figtitle)
 
                         ax1 = fig.add_subplot(1, 2, 1)
                         plt.axis("off")
                         # img = np.log10(img + np.abs(np.min(img)) + 1e-10)
                         # plt.imshow(img, cmap='gist_heat')
-                        isns.imshow(img, ax=ax1, cmap='gist_heat', vmin=0, dx=df['dr'].iloc[i], units='cm')
+                        img = np.power(img, 0.5)
+                        isns.imshow(img, ax=ax1, cmap='gist_heat', vmin=0, vmax=30, dx=df['dr'].iloc[i], units='cm')
 
                         fig.add_subplot(1, 2, 2)
                         plt.axis("on")
@@ -69,8 +70,19 @@ class Tester:
                         plt.plot(theta, pGMM, label='GMM')
                         plt.legend()
 
-                        # plt.savefig(os.path.join(figure_path, filename[:-4]+'_phase.png'), bbox_inches='tight')
                         plt.savefig(os.path.join(figure_path, filename[:-3]+'png'), bbox_inches='tight')
+
+                        # save individual parts
+                        fig, ax = plt.subplots(figsize=(4,3), dpi=300)
+                        isns.imshow(img, ax=ax, cmap='gist_heat', vmin=0, vmax=30, dx=df['dr'].iloc[i], units='cm')
+                        plt.savefig(os.path.join(figure_path, filename[:-4]+'_image.png'), bbox_inches='tight')
+
+                        fig, ax = plt.subplots(figsize=(4,3), dpi=300)
+                        plt.axis("on")
+                        plt.plot(theta, pHG, label='HG')
+                        plt.plot(theta, pGMM, label='GMM')
+                        plt.legend()
+                        plt.savefig(os.path.join(figure_path, filename[:-4]+'_phase.png'), bbox_inches='tight')
 
                         plt.close('all')
                         

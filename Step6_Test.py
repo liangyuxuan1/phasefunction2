@@ -130,10 +130,6 @@ def loss_func_mse(prediction, gt):
 
 
 # ==============================================================================================================
-if __name__=='__main__':
-
-    torch.backends.cudnn.benchmark = True
-
     # Need to calculate the mean and std of the dataset first.
 
     # imageCW, 500x500, g=0.5:0.01:0.95, training number = 70, mean = 0.0050, std = 0.3737
@@ -160,40 +156,40 @@ if __name__=='__main__':
     # Dataset MCML 501x501 (499x499), mean = 0.01578, std = 0.32363
     # Dataset MCML 251x251 (249x249), mean = 0.01584, std = 0.30017
 
-    imgSize = 41
+    # 2021-09-28
+    # 301, dr=0.002, ndr=150, FoV=0.6x0.6, mean = 0.86591, std = 3.01413
+    # 201, dr=0.002, ndr=100, FoV=0.4x0.4, mean = 1.64004, std = 4.40112
+    # 101, dr=0.002, ndr=50,  FoV=0.2x0.2, mean = 4.20267, std = 8.26528
+    # 401, dr=0.001, ndr=200, FoV=0.4x0.4, mean = 1.63391, std = 4.67807
+    # 100, dr=0.004, ndr=50,  FoV=0.4x0.4, mean = 1.65235, std = 4.12344
 
-    if imgSize == 501:
-        num_of_Gaussian = 9  # according to the training and validation results
-        model_name = 'best_model_NoG_9_run_2.pt'  
-        meanPixelVal = 0.01578   
-        stdPixelVal  = 0.32363
+def test(imgSize):
 
     if imgSize == 301:
-        num_of_Gaussian = 9  # according to the training and validation results
-        meanPixelVal = 0.04370   
-        stdPixelVal  = 0.53899
-        model_name = 'best_model_NoG_9_run_2.pt'  
+        meanPixelVal = 0.86591   
+        stdPixelVal  = 3.01413
+        model_name = 'best_model_NoG_11_run_3.pt'  
 
-    if imgSize == 251:
-        num_of_Gaussian = 8  # done on 2019.9.23
-        meanPixelVal = 0.01584   
-        stdPixelVal  = 0.30017
-        model_name = 'best_model_NoG_8_run_1.pt'  
+    if imgSize == 201:
+        meanPixelVal = 1.64004   
+        stdPixelVal  = 4.40112
+        model_name = 'best_model_NoG_11_run_0.pt'  
 
     if imgSize == 101:
-        num_of_Gaussian = 7     # TBD
-        meanPixelVal = 0.36190   
-        stdPixelVal  = 1.59218
-        batch_size = 160
-        model_name = 'best_model_NoG_7_run_1.pt'  
+        meanPixelVal = 4.20267   
+        stdPixelVal  = 8.26528
+        model_name = 'best_model_NoG_11_run_3.pt'  
 
-    if imgSize == 41:
-        num_of_Gaussian = 6     # TBD
-        meanPixelVal = 1.69022   
-        stdPixelVal  = 3.75663
-        batch_size = 160
-        model_name = 'best_model_NoG_6_run_2.pt'  
+    if imgSize == 401:
+        meanPixelVal = 1.63391   
+        stdPixelVal  = 4.67807
+        model_name = 'best_model_NoG_11_run_4.pt'  
 
+    if imgSize == 100:
+        meanPixelVal = 1.65235   
+        stdPixelVal  = 4.12344
+        model_name = 'best_model_NoG_11_run_4.pt'          
+    
     test_img_path       = f"ImageCW_Val_{imgSize}"
     test_DataListFile   = f"ValDataCW_MCML_{imgSize}.csv"
 
@@ -215,11 +211,6 @@ if __name__=='__main__':
         file_preprocessed = os.path.join(checkpoint_path, test_pickle_file_name)
     )
 
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-
-    theta = np.arange(0, np.pi, 0.001)
-    theta = torch.from_numpy(theta).to(device)
-
     # Define model
     model = Resnet18(num_classes=num_of_Gaussian*3)
 
@@ -228,5 +219,23 @@ if __name__=='__main__':
     df_loss = Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing')
 
     df_loss.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}.csv'))
+
+#====================================================================
+if __name__=='__main__':
+    torch.backends.cudnn.benchmark = True
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    theta = np.arange(0, np.pi, 0.001)
+    theta = torch.from_numpy(theta).to(device)
+
+    num_of_Gaussian = 11
+
+    test(imgSize=201)
+
+    test(imgSize=301)
+    test(imgSize=101)
+    test(imgSize=401)
+    test(imgSize=100)
 
     print('Done')

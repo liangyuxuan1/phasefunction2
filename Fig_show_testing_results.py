@@ -28,37 +28,42 @@ matplotlib.use("Agg")
 imgSize1 = 301
 checkpoint_path1 = f'training_results_MCML_{imgSize1}'
 df1 = pd.read_csv(os.path.join(checkpoint_path1, f'Test_Results_{imgSize1}.csv'))
-df1['ImgSize'] = '3x3 @ 0.01'
+df1['ImgSize'] = '0.6x0.6 @ 0.002'
 
-imgSize2 = 501
+imgSize2 = 201
 checkpoint_path2 = f'training_results_MCML_{imgSize2}'
 df2 = pd.read_csv(os.path.join(checkpoint_path2, f'Test_Results_{imgSize2}.csv'))
-df2['ImgSize'] = '5x5 @ 0.01'
+df2['ImgSize'] = '0.4x0.4 @ 0.002'
 
-imgSize3 = 251
+imgSize3 = 101
 checkpoint_path3 = f'training_results_MCML_{imgSize3}'
 df3 = pd.read_csv(os.path.join(checkpoint_path3, f'Test_Results_{imgSize3}.csv'))
-df3['ImgSize'] = '5x5 @ 0.02'
+df3['ImgSize'] = '0.2x0.2 @ 0.002'
 
-imgSize4 = 101
+imgSize4 = 401
 checkpoint_path4 = f'training_results_MCML_{imgSize4}'
 df4 = pd.read_csv(os.path.join(checkpoint_path4, f'Test_Results_{imgSize4}.csv'))
-df4['ImgSize'] = '1x1 @ 0.01'
+df4['ImgSize'] = '0.4x0.4 @ 0.001'
 
-imgSize5 = 41
+imgSize5 = 100
 checkpoint_path5 = f'training_results_MCML_{imgSize5}'
 df5 = pd.read_csv(os.path.join(checkpoint_path5, f'Test_Results_{imgSize5}.csv'))
-df5['ImgSize'] = '0.4x0.4 @ 0.01'
-
+df5['ImgSize'] = '0.4x0.4 @ 0.004'
 
 output_path = 'testing_results'
 if not os.path.exists(output_path):
     os.mkdir(output_path)
 
-df = df2.append(df1, ignore_index=True)
-df = df.append(df4, ignore_index=True)
-df = df.append(df5, ignore_index=True)
-df = df.append(df3, ignore_index=True)
+df_FoV = df3.append(df2, ignore_index=True)
+df_FoV = df_FoV.append(df1, ignore_index=True)
+
+df_Res = df5.append(df2, ignore_index=True)
+df_Res = df_Res.append(df4, ignore_index=True)
+
+df = df1.append(df2, ignore_index=True)
+df = df.append(df3,  ignore_index=True)
+df = df.append(df4,  ignore_index=True)
+df = df.append(df5,  ignore_index=True)
 
 # --------------------------------------------------------------------------------------
 # line plot of each dataset: Error vs g, Error vs leakage
@@ -90,7 +95,7 @@ plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
 #-------------
-# dataset 501
+# dataset 201
 fig, ax = plt.subplots(figsize=(6,4), dpi=100)
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df2)
 ax = sns.barplot(x="g", y="Error", hue='Tissue', data=df2, errwidth=0, palette=sns.color_palette('deep'))
@@ -101,7 +106,7 @@ figFile = os.path.join(output_path, f'Test_Results_{imgSize2}.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
-# dataset 501
+# dataset 201
 fig, ax = plt.subplots(figsize=(6,4), dpi=100)
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df1, palette=sns.color_palette('bright', 11))
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df1)
@@ -115,7 +120,7 @@ plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
 #--------------
-# dataset 251
+# dataset 101
 fig, ax = plt.subplots(figsize=(6,4), dpi=100)
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df3)
 ax = sns.barplot(x="g", y="Error", hue='Tissue', data=df3, errwidth=0, palette=sns.color_palette('deep'))
@@ -126,7 +131,7 @@ figFile = os.path.join(output_path, f'Test_Results_{imgSize3}.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
-# dataset 251
+# dataset 101
 fig, ax = plt.subplots(figsize=(6,4), dpi=100)
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df1, palette=sns.color_palette('bright', 11))
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df1)
@@ -140,7 +145,7 @@ plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
 #--------------
-# dataset 101
+# dataset 401
 fig, ax = plt.subplots(figsize=(6,4), dpi=100)
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df3)
 ax = sns.barplot(x="g", y="Error", hue='Tissue', data=df4, errwidth=0, palette=sns.color_palette('deep'))
@@ -151,7 +156,7 @@ figFile = os.path.join(output_path, f'Test_Results_{imgSize4}.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
-# dataset 101
+# dataset 401
 fig, ax = plt.subplots(figsize=(6,4), dpi=100)
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df1, palette=sns.color_palette('bright', 11))
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df1)
@@ -165,7 +170,7 @@ plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
 #--------------
-# dataset 41
+# dataset 100
 fig, ax = plt.subplots(figsize=(6,4), dpi=100)
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df3)
 ax = sns.barplot(x="g", y="Error", hue='Tissue', data=df5, errwidth=0, palette=sns.color_palette('deep'))
@@ -176,7 +181,7 @@ figFile = os.path.join(output_path, f'Test_Results_{imgSize5}.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
-# dataset 41
+# dataset 100
 fig, ax = plt.subplots(figsize=(6,4), dpi=100)
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df1, palette=sns.color_palette('bright', 11))
 # ax = sns.lineplot(x="g", y="Error", hue='Tissue', data=df1)
@@ -189,41 +194,128 @@ figFile = os.path.join(output_path, f'Test_Results_Leakage_{imgSize5}.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
+
 # --------------------------------------------------------------------------------------
 # box plot, error vs tissue
-fig, ax = plt.subplots(figsize=(10,4), dpi=100)
+fig, ax = plt.subplots(figsize=(8,4), dpi=300)
 #ax = sns.boxplot(x="Tissue", y="Error", hue='ImgSize', data=df, linewidth=1, width=0.5, showfliers=False)
-ax = sns.barplot(x="Tissue", y="Error", hue='ImgSize', data=df, capsize=0.1, errwidth=1, palette=sns.color_palette('deep'))
-ax.legend(title='FoV')
+ax = sns.barplot(x="Tissue", y="Error", hue='ImgSize', data=df_FoV, capsize=0.1, errwidth=1, palette=sns.color_palette('deep'))
+ax.legend(title='', loc='upper left')
 plt.xticks(rotation=-45)
 plt.xlabel('')
 plt.ylabel('MSE')
-figFile = os.path.join(output_path, f'Test_Results_Tissue_Error.png')
+figFile = os.path.join(output_path, f'Test_Results_tissueError_FoV.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
 
+
+fig, ax = plt.subplots(figsize=(8,4), dpi=300)
+#ax = sns.boxplot(x="Tissue", y="Error", hue='ImgSize', data=df, linewidth=1, width=0.5, showfliers=False)
+ax = sns.barplot(x="g", y="Error", hue='Tissue', data=df_FoV, capsize=0.03, errwidth=1, palette=sns.color_palette('deep'))
+ax.legend(title='', bbox_to_anchor=(1.02,1),loc='upper left', borderaxespad=0)
+plt.xticks(rotation=-45)
+plt.xlabel('')
+plt.ylabel('MSE')
+figFile = os.path.join(output_path, f'Test_Results_tissueError_g_FoV.png')
+plt.savefig(figFile, bbox_inches='tight')
+plt.show()
+
+
 # bar plot, compare the reflectance ratio
-fig, ax = plt.subplots(figsize=(10,4), dpi=100)
-ax = sns.barplot(x="Tissue", y="OutlierPercent", hue='ImgSize', data=df, palette=sns.color_palette('deep'))
+fig, ax = plt.subplots(figsize=(8,4), dpi=300)
+ax = sns.barplot(x="Tissue", y="OutlierPercent", hue='ImgSize', data=df_FoV, errwidth=0, palette=sns.color_palette('deep'))
 #ax.legend(title='Image Size', bbox_to_anchor=(1.02,1),loc='upper left', borderaxespad=0)
-ax.legend(title='FoV')
+ax.legend(title='')
 plt.xticks(rotation=-45)
 plt.xlabel('')
 plt.ylabel('Reflectance leakage (%)')
-figFile = os.path.join(output_path, f'Test_Results_Leakage.png')
+figFile = os.path.join(output_path, f'Test_Results_Leakage_FoV.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
-
 
 # point plot, compare error vs g
-fig, ax = plt.subplots(figsize=(6,4), dpi=100)
-ax = sns.pointplot(x="g", y="Error", hue="ImgSize", data=df, markers='.', capsize=0.1, errwidth=1)
-ax.legend(title='FoV')
+
+# color palette as dictionary
+palette = {"0.6x0.6 @ 0.002":"tab:purple",
+           "0.4x0.4 @ 0.002":"tab:red", 
+           "0.2x0.2 @ 0.002":"tab:blue"}
+
+fig, ax = plt.subplots(figsize=(4,3), dpi=300)
+ax = sns.pointplot(x="g", y="Error", hue="ImgSize", data=df_FoV, markers='.', capsize=0.1, errwidth=1, palette=palette)
+ax.legend(title='', loc='upper left')
+ax.set_ylim(0, 0.06)
 plt.xlabel('Anistropy Factor')
 plt.ylabel('MSE')
-figFile = os.path.join(output_path, f'Test_Results_g_Error.png')
+figFile = os.path.join(output_path, f'Test_Results_g_FoV.png')
 plt.savefig(figFile, bbox_inches='tight')
 plt.show()
+
+# --------------------------------------------------------------------------------------
+# box plot, error vs tissue
+fig, ax = plt.subplots(figsize=(8,4), dpi=300)
+#ax = sns.boxplot(x="Tissue", y="Error", hue='ImgSize', data=df, linewidth=1, width=0.5, showfliers=False)
+ax = sns.barplot(x="Tissue", y="Error", hue='ImgSize', data=df_Res, capsize=0.1, errwidth=1, palette=sns.color_palette('deep'))
+ax.legend(title='', loc='upper left')
+plt.xticks(rotation=-45)
+plt.xlabel('')
+plt.ylabel('MSE')
+figFile = os.path.join(output_path, f'Test_Results_tissueError_Res.png')
+plt.savefig(figFile, bbox_inches='tight')
+plt.show()
+
+fig, ax = plt.subplots(figsize=(8,4), dpi=300)
+#ax = sns.boxplot(x="Tissue", y="Error", hue='ImgSize', data=df, linewidth=1, width=0.5, showfliers=False)
+ax = sns.barplot(x="g", y="Error", hue='Tissue', data=df_Res, capsize=0.03, errwidth=1, palette=sns.color_palette('deep'))
+ax.legend(title='', bbox_to_anchor=(1.02,1),loc='upper left', borderaxespad=0)
+plt.xticks(rotation=-45)
+plt.xlabel('')
+plt.ylabel('MSE')
+figFile = os.path.join(output_path, f'Test_Results_tissueError_g_Res.png')
+plt.savefig(figFile, bbox_inches='tight')
+plt.show()
+
+
+# bar plot, compare the reflectance ratio
+fig, ax = plt.subplots(figsize=(8,4), dpi=300)
+ax = sns.barplot(x="Tissue", y="OutlierPercent", hue='ImgSize', data=df_Res, errwidth=0, palette=sns.color_palette('deep'))
+#ax.legend(title='Image Size', bbox_to_anchor=(1.02,1),loc='upper left', borderaxespad=0)
+ax.legend(title='')
+plt.xticks(rotation=-45)
+plt.xlabel('')
+plt.ylabel('Reflectance leakage (%)')
+figFile = os.path.join(output_path, f'Test_Results_Leakage_Res.png')
+plt.savefig(figFile, bbox_inches='tight')
+plt.show()
+
+# point plot, compare error vs g
+
+# color palette as dictionary
+palette = {"0.4x0.4 @ 0.001":"tab:orange",
+           "0.4x0.4 @ 0.002":"tab:red", 
+           "0.4x0.4 @ 0.004":"tab:green"}
+
+fig, ax = plt.subplots(figsize=(4,3), dpi=300)
+ax = sns.pointplot(x="g", y="Error", hue="ImgSize", data=df_Res, markers='.', capsize=0.1, errwidth=1, palette=palette)
+ax.legend(title='', loc='upper left')
+ax.set_ylim(0, 0.06)
+plt.xlabel('Anistropy Factor')
+plt.ylabel('MSE')
+figFile = os.path.join(output_path, f'Test_Results_g_Res.png')
+plt.savefig(figFile, bbox_inches='tight')
+plt.show()
+
+#=========================
+# point plot, compare error vs g
+fig, ax = plt.subplots(figsize=(4,3), dpi=300)
+ax = sns.pointplot(x="g", y="Error", hue="ImgSize", data=df, markers='.', capsize=0.1, errwidth=1)
+ax.legend(title='', loc='upper left')
+ax.set_ylim(0, 0.06)
+plt.xlabel('Anistropy Factor')
+plt.ylabel('MSE')
+figFile = os.path.join(output_path, f'Test_Results_all.png')
+plt.savefig(figFile, bbox_inches='tight')
+plt.show()
+
 
 print('done')
 

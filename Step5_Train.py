@@ -5,6 +5,7 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader, dataset
 from torchvision import transforms
+from sklearn.model_selection import KFold
 
 # pip install torch-summary
 from torchsummary import summary
@@ -131,10 +132,6 @@ def loss_func_mse(prediction, gt):
 
 
 # ==============================================================================================================
-if __name__=='__main__':
-
-    torch.backends.cudnn.benchmark = True
-
     # Need to calculate the mean and std of the dataset first.
 
     # imageCW, 500x500, g=0.5:0.01:0.95, training number = 70, mean = 0.0050, std = 0.3737
@@ -162,39 +159,39 @@ if __name__=='__main__':
     # Dataset MCML 101x101 (99x99),   mean = 0.36190, std = 1.59218
     # Dataset MCML 41x41   (39x39),   mean = 1.69022, std = 3.75663
 
-    imgSize = 41
+    # 2021-09-28
+    # 301, dr=0.002, ndr=150, FoV=0.6x0.6, mean = 0.86591, std = 3.01413
+    # 201, dr=0.002, ndr=100, FoV=0.4x0.4, mean = 1.64004, std = 4.40112
+    # 101, dr=0.002, ndr=50,  FoV=0.2x0.2, mean = 4.20267, std = 8.26528
+    # 401, dr=0.001, ndr=200, FoV=0.4x0.4, mean = 1.63391, std = 4.67807
+    # 100, dr=0.004, ndr=50,  FoV=0.4x0.4, mean = 1.65235, std = 4.12344
 
-    if imgSize == 501:
-        meanPixelVal = 0.01578   
-        stdPixelVal  = 0.32363
-        batch_size = 160
-        num_of_Gaussian = 9
+def train(imgSize):
 
     if imgSize == 301:
-        meanPixelVal = 0.04370   
-        stdPixelVal  = 0.53899
-        batch_size = 160
-        num_of_Gaussian = 9     # TBD
+        meanPixelVal = 0.86591   
+        stdPixelVal  = 3.01413
+        batch_size = 220
 
-    if imgSize == 251:
-        meanPixelVal = 0.01584   
-        stdPixelVal  = 0.30017
-        batch_size = 160
-        num_of_Gaussian = 8     # done on 2021.9.23
+    if imgSize == 201:
+        meanPixelVal = 1.64004   
+        stdPixelVal  = 4.40112
+        batch_size   = 220
 
     if imgSize == 101:
-        meanPixelVal = 0.36190   
-        stdPixelVal  = 1.59218
-        batch_size = 160
-        num_of_Gaussian = 7     # TBD
+        meanPixelVal = 4.20267   
+        stdPixelVal  = 8.26528
+        batch_size   = 220
 
-    # Dataset MCML 41x41   (39x39),   mean = 1.69022, std = 3.75663
-    if imgSize == 41:
-        meanPixelVal = 1.69022   
-        stdPixelVal  = 3.75663
-        batch_size = 160
-        num_of_Gaussian = 6     # TBD
-    
+    if imgSize == 401:
+        meanPixelVal = 1.63391   
+        stdPixelVal  = 4.67807
+        batch_size = 220
+
+    if imgSize == 100:
+        meanPixelVal = 1.65235   
+        stdPixelVal  = 4.12344
+        batch_size = 220
 
     train_img_path      = f"ImageCW_Train_{imgSize}"
     train_DataListFile  = f"TrainDataCW_MCML_{imgSize}.csv"
@@ -212,31 +209,38 @@ if __name__=='__main__':
                                             transforms.RandomVerticalFlip(0.5)
     ])
 
-    train_labels    = pd.read_csv(os.path.join(train_img_path, train_DataListFile))
+    total_labels    = pd.read_csv(os.path.join(train_img_path, train_DataListFile))
 
-    train_pickle_file_name  = 'train.pkl'
+    total_pickle_file_name  = 'train.pkl'
     
     print('Preprocessing...')
-    DataPreprocessor().dump(train_labels, train_img_path, checkpoint_path, train_pickle_file_name, preprocessing_transformer)
+    DataPreprocessor().dump(total_labels, train_img_path, checkpoint_path, total_pickle_file_name, preprocessing_transformer)
     print('Preprocessing finished')
 
-    train_data = CustomImageDataset_Pickle(
-        img_labels = train_labels,
-        file_preprocessed = os.path.join(checkpoint_path, train_pickle_file_name),
+    total_data = CustomImageDataset_Pickle(
+        img_labels = total_labels,
+        file_preprocessed = os.path.join(checkpoint_path, total_pickle_file_name),
         transform = train_transformer
     )
 
-    # Create data loaders.
-    train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True, pin_memory=True, num_workers=8)
+    k_folds = 5
+    # Set fixed random number seed
+    torch.manual_seed(142)
 
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    logger.info(f"Using {device} device")
+    # Define the K-fold Cross Validator
+    kfold = KFold(n_splits=k_folds, shuffle=True)
+    Trn = trainer.Trainer()
+    df_loss_best = pd.DataFrame(columns=['Fold', 'NoG', 'Events', 'Error'])
 
-    theta = np.arange(0, np.pi, 0.001)
-    theta = torch.from_numpy(theta).to(device)
+    for fold, (train_ids, val_ids) in enumerate(kfold.split(total_data)):    
+        # Sample elements randomly from a given list of ids, no replacement.
+        train_subsampler = torch.utils.data.SubsetRandomSampler(train_ids)
+        val_subsampler   = torch.utils.data.SubsetRandomSampler(val_ids)
 
-    df_loss_best = pd.DataFrame(columns=['Run', 'Events', 'Error'])
-    for run in range(1,6):
+        # Define data loaders for training and validating data in this fold
+        train_dataloader = DataLoader(total_data, batch_size=batch_size, sampler=train_subsampler, pin_memory=True, num_workers=8)
+        val_dataloader   = DataLoader(total_data, batch_size=batch_size, sampler=val_subsampler, pin_memory=True, num_workers=8)
+
         # Define model
         model = Resnet18(num_classes=num_of_Gaussian*3)
         model_struct = summary(model, (1, imgSize-2, imgSize-2), verbose=0)
@@ -248,20 +252,22 @@ if __name__=='__main__':
         scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
         Trn = trainer.Trainer()
-        bestmodel_name      = f'best_model_NoG_{num_of_Gaussian}_run_{run}' 
-        result_file_name    = f'train_loss_NoG_{num_of_Gaussian}_run_{run}'
-        logger.info(f'Run: {run}, Start training')
-        train_loss, df_loss = Trn.train_only(train_dataloader, model, loss_func_mse, 
-                                    optimizer, scheduler, num_epochs=30,
-                                    model_dir=checkpoint_path, model_name=bestmodel_name)
+        bestmodel_name      = f'best_model_NoG_{num_of_Gaussian}_run_{fold}' 
+        result_file_name    = f'train_loss_NoG_{num_of_Gaussian}_run_{fold}'
+        logger.info(f'Dataset: {imgSize}, Fold: {fold}, NoG: {num_of_Gaussian}, Start training')
+        val_loss_min, train_loss, df_loss = Trn.train_and_val(train_dataloader, val_dataloader, model, loss_func_mse, 
+                                                    optimizer, scheduler, num_epochs=30,
+                                                    model_dir=checkpoint_path, model_name=bestmodel_name)
 
-        train_result = {'Run':run, 'Events':'Train', 'Error':train_loss}
+        train_result = {'Fold':fold, 'NoG':num_of_Gaussian, 'Events':'Train', 'Error':train_loss}
+        val_result   = {'Fold':fold, 'NoG':num_of_Gaussian, 'Events':'Validation', 'Error':val_loss_min}
         df_loss_best = df_loss_best.append(train_result, ignore_index=True)
+        df_loss_best = df_loss_best.append(val_result,   ignore_index=True)
 
         df_loss.to_csv(os.path.join(checkpoint_path, f'{result_file_name}.csv'), index=False)
 
         fig, ax = plt.subplots(figsize=(6,4), dpi=100)
-        ax = sns.lineplot(x="Epoch", y="Error", data=df_loss)
+        ax = sns.lineplot(x="Epoch", y="Error", hue='Events', data=df_loss)
         ax.legend(title='', loc='upper right')
         plt.xlabel('Epoch')
         plt.ylabel('Loss (MSE)')
@@ -271,10 +277,32 @@ if __name__=='__main__':
 
         df_loss_best.to_csv(os.path.join(checkpoint_path, f'Train_Results_{imgSize}.csv'), index=False)
 
-    #---end of for num_of_Gaussian
+    #---end of fold
     print(df_loss_best)
     df_loss_best.to_csv(os.path.join(checkpoint_path, f'Train_Results_{imgSize}.csv'), index=False)
-
-
     #---end of training
+
+    x = list(logger.handlers)
+    for i in x:
+        logger.removeHandler(i)
+        i.flush()
+        i.close()    
+
+if __name__=='__main__':
+
+    torch.backends.cudnn.benchmark = True
+ 
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    theta = np.arange(0, np.pi, 0.001)
+    theta = torch.from_numpy(theta).to(device)
+
+    num_of_Gaussian = 11
+
+    train(imgSize=301)
+    train(imgSize=201)
+    train(imgSize=101)
+    train(imgSize=401)
+    train(imgSize=100)
+
     print('Done')
