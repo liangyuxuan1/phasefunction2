@@ -39,7 +39,7 @@ if __name__=='__main__':
     for i in range(0,8):
         sns.lineplot(ax=ax, x=theta, y=pHG[i,:], label=f'g={g[i]:>0.2f}')
     plt.xlabel(''r'$\theta$ [radian]')
-    plt.ylabel(''r'$p\'(\theta)$')
+    plt.ylabel(''r'$p(\theta)$')
     plt.legend()
     figFile = os.path.join('testing_results', f'Figure_HG.png')
     plt.savefig(figFile, bbox_inches='tight')
