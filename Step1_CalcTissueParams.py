@@ -32,6 +32,8 @@ df['ua'] = df['SB']*(df['x']*ua_Hb + (1-df['x'])*ua_HbO2) + df['SW']*ua_W
 
 # us = reduced_us/(1-g)
 
+df['lamda'] = df['rus']/df['ua']
+
 print(df)
 
 df.to_csv('TissueParams.csv', index=False)
