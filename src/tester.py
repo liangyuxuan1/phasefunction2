@@ -78,7 +78,7 @@ class Tester:
 
                         # save individual parts
                         fig, ax = plt.subplots(figsize=(4,3), dpi=300)
-                        isns.imshow(img, ax=ax, cmap='gist_heat', vmin=0, vmax=30, dx=2*df['dr'].iloc[i], units='cm')
+                        isns.imshow(img, ax=ax, cmap='gist_heat', vmin=0, vmax=30, dx=df['dr'].iloc[i], units='cm')
                         plt.savefig(os.path.join(figure_path, filename[:-4]+'_image.png'), bbox_inches='tight')
 
                         fig, ax = plt.subplots(figsize=(4,3), dpi=300)
