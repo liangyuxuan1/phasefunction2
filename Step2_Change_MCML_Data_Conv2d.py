@@ -53,7 +53,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
 
         if filename.find('0001') != -1:
             print('saving reflectance image ...')
-            isns.imshow(img, cmap='gist_heat', dx=InParam.dr, units='cm')
+            isns.imshow(img, cmap='gist_heat', dx=2*InParam.dr, units='cm')
             plt.savefig(os.path.join(img_path, 'image', filename[:-3]+'png'), bbox_inches='tight')
             plt.close('all')
             
