@@ -28,27 +28,27 @@ matplotlib.use("Agg")
 imgSize1 = 301
 checkpoint_path1 = f'training_results_MCML_{imgSize1}'
 df1 = pd.read_csv(os.path.join(checkpoint_path1, f'Test_Results_{imgSize1}.csv'))
-df1['ImgSize'] = '0.6x0.6 @ 0.002'
+df1['ImgSize'] = '6x6 @ 0.02'
 
 imgSize2 = 201
 checkpoint_path2 = f'training_results_MCML_{imgSize2}'
 df2 = pd.read_csv(os.path.join(checkpoint_path2, f'Test_Results_{imgSize2}.csv'))
-df2['ImgSize'] = '0.4x0.4 @ 0.002'
+df2['ImgSize'] = '4x4 @ 0.02'
 
 imgSize3 = 101
 checkpoint_path3 = f'training_results_MCML_{imgSize3}'
 df3 = pd.read_csv(os.path.join(checkpoint_path3, f'Test_Results_{imgSize3}.csv'))
-df3['ImgSize'] = '0.2x0.2 @ 0.002'
+df3['ImgSize'] = '2x2 @ 0.02'
 
 imgSize4 = 401
 checkpoint_path4 = f'training_results_MCML_{imgSize4}'
 df4 = pd.read_csv(os.path.join(checkpoint_path4, f'Test_Results_{imgSize4}.csv'))
-df4['ImgSize'] = '0.4x0.4 @ 0.001'
+df4['ImgSize'] = '4x4 @ 0.01'
 
 imgSize5 = 100
 checkpoint_path5 = f'training_results_MCML_{imgSize5}'
 df5 = pd.read_csv(os.path.join(checkpoint_path5, f'Test_Results_{imgSize5}.csv'))
-df5['ImgSize'] = '0.4x0.4 @ 0.004'
+df5['ImgSize'] = '4x4 @ 0.04'
 
 output_path = 'testing_results'
 if not os.path.exists(output_path):
@@ -243,9 +243,9 @@ plt.show()
 # point plot, compare error vs g
 
 # color palette as dictionary
-palette = {"0.6x0.6 @ 0.002":"tab:purple",
-           "0.4x0.4 @ 0.002":"tab:red", 
-           "0.2x0.2 @ 0.002":"tab:blue"}
+palette = {"6x6 @ 0.02":"tab:purple",
+           "4x4 @ 0.02":"tab:red", 
+           "2x2 @ 0.02":"tab:blue"}
 
 fig, ax = plt.subplots(figsize=(4,3), dpi=300)
 ax = sns.pointplot(x="g", y="Error", hue="ImgSize", data=df_FoV, markers='.', capsize=0.1, errwidth=1, palette=palette)
@@ -297,9 +297,9 @@ plt.show()
 # point plot, compare error vs g
 
 # color palette as dictionary
-palette = {"0.4x0.4 @ 0.001":"tab:orange",
-           "0.4x0.4 @ 0.002":"tab:red", 
-           "0.4x0.4 @ 0.004":"tab:green"}
+palette = {"4x4 @ 0.01":"tab:orange",
+           "4x4 @ 0.02":"tab:red", 
+           "4x4 @ 0.04":"tab:green"}
 
 fig, ax = plt.subplots(figsize=(4,3), dpi=300)
 ax = sns.pointplot(x="g", y="Error", hue="ImgSize", data=df_Res, markers='.', capsize=0.1, errwidth=1, palette=palette)
