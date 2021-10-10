@@ -65,6 +65,13 @@ df = df.append(df1,  ignore_index=True)
 df = df.append(df5,  ignore_index=True)
 df = df.append(df4,  ignore_index=True)
 
+# Table Overview of Results, mean of MSE and standard error of MSE
+
+results = np.array([[df3['Error'].mean(), df2['Error'].mean(), df1['Error'].mean(), df4['Error'].mean(), df5['Error'].mean()],
+           [df3['Error'].sem(),  df2['Error'].sem(),  df1['Error'].sem(),  df4['Error'].sem(),  df5['Error'].sem()] ])
+
+np.savetxt(os.path.join(output_path, 'Test_Results_Overview.txt'), results, fmt='%.6f')
+
 # --------------------------------------------------------------------------------------
 # line plot of each dataset: Error vs g, Error vs leakage
 
