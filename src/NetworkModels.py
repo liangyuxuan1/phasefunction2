@@ -1,3 +1,4 @@
+import torch
 from torch import nn
 import torchvision.models as models
 
@@ -19,7 +20,8 @@ class Resnet18(nn.Module):
     def forward(self, x):
         x = self.backbone(x)
         feature = x.view(x.size(0),-1)
-
+        
+        x = torch.flatten(x, 1)
         pred = self.fc(x)
     
         return pred, feature
