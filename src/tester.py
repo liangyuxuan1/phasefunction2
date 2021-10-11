@@ -25,6 +25,7 @@ class Tester:
 
         df = dataset.img_labels
         with torch.no_grad():
+            features = []
             for i in range(len(dataset)):
                 X, gt = dataset[i]
                 img = inverse_transform(X)
@@ -33,11 +34,15 @@ class Tester:
                 X = X.reshape(1,*X.shape)
                 gt = gt.reshape(1,-1)
                 X, y = X.to(device), gt.to(device)
-                pred = model(X)
+                pred, feature = model(X)
                 loss, pHG, pGMM = loss_fn(pred, y)
                 pHG, pGMM = pHG.to('cpu'), pGMM.to('cpu')
                 pHG, pGMM = pHG.squeeze(), pGMM.squeeze()
                 pHG, pGMM = pHG.numpy(), pGMM.numpy()
+
+                feature = feature.to('cpu')
+                feature = feature.numpy()
+                features.append(feature)
 
                 gt = gt.numpy()
                 df['Error'].iloc[i] = loss.item()

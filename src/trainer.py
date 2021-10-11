@@ -25,7 +25,7 @@ class Trainer:
             X, y = X.to(device), y.to(device)
 
             # Compute prediction error
-            pred = model(X)
+            pred, _ = model(X)
             loss = loss_fn(pred, y)
             train_loss += loss.item()
 
@@ -51,7 +51,7 @@ class Trainer:
         with torch.no_grad():
             for X, y in dataloader:
                 X, y = X.to(device), y.to(device)
-                pred = model(X)
+                pred, _ = model(X)
                 loss = loss_fn(pred, y)
                 val_loss += loss.item()
                 

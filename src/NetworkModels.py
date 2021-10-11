@@ -7,17 +7,19 @@ class Resnet18(nn.Module):
     """
     def __init__(self, num_classes):
         super().__init__()
-        self.model = models.resnet18()
-        self.model.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
-        self.model.fc = nn.Sequential(
+        backbone = models.resnet18()
+        backbone.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
+
+        self.backbone = nn.Sequential(*list(backbone.children())[:-1])
+        self.fc = nn.Sequential(
             nn.Linear(in_features=512, out_features=num_classes),
             nn.Sigmoid()
         )
 
     def forward(self, x):
-        """
-        :param x: The input tensor with 3 dimensions
-        :return:
-        """
+        x = self.backbone(x)
+        feature = x.view(x.size(0),-1)
 
-        return self.model(x)
+        pred = self.fc(x)
+    
+        return pred, feature
