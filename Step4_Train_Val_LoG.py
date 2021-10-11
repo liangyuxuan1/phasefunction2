@@ -270,7 +270,7 @@ if __name__=='__main__':
         val_dataloader   = DataLoader(val_data, batch_size=batch_size, pin_memory=True, num_workers=8)
 
         df_loss_best = pd.DataFrame(columns=['Fold', 'NoG', 'Events', 'Error'])
-        for num_of_Gaussian in range(5, 13):
+        for num_of_Gaussian in range(2, 13):
             # Define model
             model = Resnet18(num_classes=num_of_Gaussian*3)
             model_struct = summary(model, (1, imgSize-2, imgSize-2), verbose=0)
