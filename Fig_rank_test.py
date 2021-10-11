@@ -72,11 +72,11 @@ df = df.append(df5,  ignore_index=True)
 # https://www.marsja.se/how-to-perform-a-two-sample-t-test-with-python-3-different-methods/
 
 # Subset data
-df301 = df1.query('g == 0.9')['Error']    # 0.6x0.6 @ 0.002
-df201 = df2.query('g == 0.9')['Error']    # 0.4x0.4 @ 0.002
-df101 = df3.query('g == 0.9')['Error']    # 0.2x0.2 @ 0.002
-df401 = df4.query('g == 0.9')['Error']    # 0.4x0.4 @ 0.001
-df100 = df5.query('g == 0.9')['Error']    # 0.4x0.4 @ 0.004
+df301 = df1.query('g == 0.6')['Error']    # 0.6x0.6 @ 0.002
+df201 = df2.query('g == 0.6')['Error']    # 0.4x0.4 @ 0.002
+df101 = df3.query('g == 0.6')['Error']    # 0.2x0.2 @ 0.002
+df401 = df4.query('g == 0.6')['Error']    # 0.4x0.4 @ 0.001
+df100 = df5.query('g == 0.6')['Error']    # 0.4x0.4 @ 0.004
 
 # Checking the Normality of Data
 # Results: the MSE are not normally distributed. 
@@ -100,11 +100,25 @@ print(res)
 #===============================================================
 # https://www.reneshbedre.com/blog/mann-whitney-u-test.html
 # Mann-Whitney U test (Wilcoxon rank sum test )
+print('\n')
+
 res = stats.mannwhitneyu(df301, df201, alternative = 'two-sided')
 print(res)
+res = stats.mannwhitneyu(df301, df101, alternative = 'two-sided')
+print(res)
+
+res = stats.mannwhitneyu(df401, df201, alternative = 'two-sided')
+print(res)
+res = stats.mannwhitneyu(df401, df100, alternative = 'two-sided')
+print(res)
+
+
+print('\n')
+
 res = stats.mannwhitneyu(df201, df101, alternative = 'two-sided')
 print(res)
-res = stats.mannwhitneyu(df301, df101, alternative = 'two-sided')
+
+res = stats.mannwhitneyu(df201, df100, alternative = 'two-sided')
 print(res)
 
 
