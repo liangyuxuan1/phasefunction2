@@ -163,7 +163,7 @@ def loss_func_mse(prediction, gt):
     # 401, dr=0.001, ndr=200, FoV=0.4x0.4, mean = 1.63391, std = 4.67807
     # 100, dr=0.004, ndr=50,  FoV=0.4x0.4, mean = 1.65235, std = 4.12344
 
-def test(imgSize):
+def test(imgSize, index=None):
 
     if imgSize == 301:
         meanPixelVal = 0.86591   
@@ -178,17 +178,17 @@ def test(imgSize):
     if imgSize == 101:
         meanPixelVal = 4.20267   
         stdPixelVal  = 8.26528
-        model_name = 'best_model_NoG_11_run_3.pt'  
+        model_name = 'best_model_NoG_11_run_0.pt'  
 
     if imgSize == 401:
         meanPixelVal = 1.63391   
         stdPixelVal  = 4.67807
-        model_name = 'best_model_NoG_11_run_4.pt'  
+        model_name = 'best_model_NoG_11_run_0.pt'  
 
     if imgSize == 100:
         meanPixelVal = 1.65235   
         stdPixelVal  = 4.12344
-        model_name = 'best_model_NoG_11_run_4.pt'          
+        model_name = 'best_model_NoG_11_run_0.pt'          
     
     test_img_path       = f"ImageCW_Val_{imgSize}"
     test_DataListFile   = f"ValDataCW_MCML_{imgSize}.csv"
@@ -216,9 +216,13 @@ def test(imgSize):
 
     Tst = tester.Tester()
     print(f'NoG: {num_of_Gaussian}, Start testing')
-    df_loss = Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing')
 
-    df_loss.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}.csv'))
+    if index is None:
+        df_loss, features = Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing')
+        df_loss.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}.csv'))
+        np.save(os.path.join(checkpoint_path, f'Test_Results_Features_{imgSize}.npy'), features)
+    else:
+        Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing', index)
 
 #====================================================================
 if __name__=='__main__':
@@ -231,11 +235,14 @@ if __name__=='__main__':
 
     num_of_Gaussian = 11
 
-    test(imgSize=201)
+    #test(imgSize=201)
+    test(imgSize=201, index=[861, 620])
+
+    test(imgSize=100)
+    test(imgSize=100, index=[1613, 1426])
 
     test(imgSize=301)
     test(imgSize=101)
     test(imgSize=401)
-    test(imgSize=100)
 
     print('Done')

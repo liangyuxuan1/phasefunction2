@@ -16,7 +16,7 @@ class Tester:
     def logger(self):
         return logging.getLogger(__name__)
 
-    def test(self, dataset, model, loss_fn, inverse_transform, figure_path, save_fig, device):
+    def test(self, dataset, model, loss_fn, inverse_transform, figure_path, save_fig, index, device):
         if save_fig:
             if not os.path.exists(figure_path):
                 os.mkdir(figure_path)
@@ -26,7 +26,12 @@ class Tester:
         df = dataset.img_labels
         with torch.no_grad():
             features = []
-            for i in range(len(dataset)):
+            if index is None:
+                idx = np.arange(len(dataset))
+            else:
+                idx = index
+
+            for temp, i in enumerate(idx):
                 X, gt = dataset[i]
                 img = inverse_transform(X)
                 img = img.squeeze().numpy()
@@ -40,7 +45,7 @@ class Tester:
                 pHG, pGMM = pHG.squeeze(), pGMM.squeeze()
                 pHG, pGMM = pHG.numpy(), pGMM.numpy()
 
-                feature = feature.to('cpu')
+                feature = feature.to('cpu').squeeze()
                 feature = feature.numpy()
                 features.append(feature)
 
@@ -50,7 +55,7 @@ class Tester:
                 filename = df['Image'].iloc[i]
 
                 if save_fig:
-                    if filename.find('0001') != -1:
+                    if (filename.find('0001') != -1) or (index is not None):
                         print(f'Saving {filename},  Error: {loss.item()} ')
 
                         fig, ax = plt.subplots(figsize=(10, 4), dpi=300)
@@ -66,7 +71,7 @@ class Tester:
                         # img = np.log10(img + np.abs(np.min(img)) + 1e-10)
                         # plt.imshow(img, cmap='gist_heat')
                         img = np.power(img, 0.5)
-                        isns.imshow(img, ax=ax1, cmap='gist_heat', vmin=0, vmax=30, dx=df['dr'].iloc[i], units='cm')
+                        isns.imshow(img, ax=ax1, cmap='gist_heat', vmin=0, dx=df['dr'].iloc[i], units='cm')
 
                         fig.add_subplot(1, 2, 2)
                         plt.axis("on")
@@ -83,7 +88,7 @@ class Tester:
 
                         # save individual parts
                         fig, ax = plt.subplots(figsize=(4,3), dpi=300)
-                        isns.imshow(img, ax=ax, cmap='gist_heat', vmin=0, vmax=30, dx=df['dr'].iloc[i], units='cm')
+                        isns.imshow(img, ax=ax, cmap='gist_heat', vmin=0, dx=df['dr'].iloc[i], units='cm')
                         plt.savefig(os.path.join(figure_path, filename[:-4]+'_image.png'), bbox_inches='tight')
 
                         fig, ax = plt.subplots(figsize=(4,3), dpi=300)
@@ -94,10 +99,12 @@ class Tester:
                         plt.savefig(os.path.join(figure_path, filename[:-4]+'_phase.png'), bbox_inches='tight')
 
                         plt.close('all')
-                        
-        return df
 
-    def run(self, dataset, network, loss_func, model_dir, model_name, inverse_transform, figure_path_name=None, device=None):
+            features = np.array(features)
+                                    
+        return df, features
+
+    def run(self, dataset, network, loss_func, model_dir, model_name, inverse_transform, figure_path_name=None, index = None, device=None):
         if figure_path_name is None:
             save_fig = False
             figure_path = ''
@@ -119,5 +126,6 @@ class Tester:
         # copy network to device [cpu /gpu] if available
         network.to(device=device)
 
-        loss_df = self.test(dataset, network, loss_func, inverse_transform, figure_path, save_fig, device)
-        return loss_df
+        loss_df, features = self.test(dataset, network, loss_func, inverse_transform, figure_path, save_fig, index, device)
+
+        return loss_df, features
