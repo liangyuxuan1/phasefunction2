@@ -62,7 +62,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
             if (InParam.g == 0.6) or (InParam.g == 0.65):
                 profiles = np.concatenate((profiles, Rd_xy[InParam.ndr, :]))
                 tissueNames.append(tissue)
-            ax = np.arange(-InParam.ndr+1, InParam.ndr)*InParam.dr
+            ax = 10*np.arange(-InParam.ndr+1, InParam.ndr)*InParam.dr
 
         pdRow = {'Image':filename, 'ua':InParam.mua, 'us':InParam.mus, 'g':InParam.g, 
                 'Tissue':tissue, 'dr':InParam.dr, 'ndr':InParam.ndr, 
@@ -82,14 +82,14 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
         plt.plot(ax, profiles[i,:], label=tissueNames[i])
     #axx.legend(title='', bbox_to_anchor=(1.02,1),loc='upper left', borderaxespad=0)
     plt.legend()
-    plt.xlabel('x [cm]')
+    plt.xlabel('x [mm]')
     plt.ylabel('Rd [cm'r'$^{-2}$]')
     plt.savefig(os.path.join(img_path, 'image', 'profiles.png'), bbox_inches='tight')
 
 # ==================================================================
 if __name__=='__main__':
 
-    imgSize = 101
+    imgSize = 100
 
     src_path        = f"RawData_MCML_Val_{imgSize}"
     dst_path        = f"ImageCW_Val_{imgSize}"

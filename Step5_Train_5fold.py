@@ -223,14 +223,24 @@ def train(imgSize):
         transform = train_transformer
     )
 
-    train_dataloader = DataLoader(total_data, batch_size=batch_size, shuffle=True, pin_memory=True, num_workers=8)
-
+    k_folds = 5
     # Set fixed random number seed
-    # torch.manual_seed(142)
+    torch.manual_seed(142)
 
+    # Define the K-fold Cross Validator
+    kfold = KFold(n_splits=k_folds, shuffle=True)
     Trn = trainer.Trainer()
-    df_loss_best = pd.DataFrame(columns=['Run', 'NoG', 'Events', 'Error'])
-    for run in range(5):    
+    df_loss_best = pd.DataFrame(columns=['Fold', 'NoG', 'Events', 'Error'])
+
+    for fold, (train_ids, val_ids) in enumerate(kfold.split(total_data)):    
+        # Sample elements randomly from a given list of ids, no replacement.
+        train_subsampler = torch.utils.data.SubsetRandomSampler(train_ids)
+        val_subsampler   = torch.utils.data.SubsetRandomSampler(val_ids)
+
+        # Define data loaders for training and validating data in this fold
+        train_dataloader = DataLoader(total_data, batch_size=batch_size, sampler=train_subsampler, pin_memory=True, num_workers=8)
+        val_dataloader   = DataLoader(total_data, batch_size=batch_size, sampler=val_subsampler, pin_memory=True, num_workers=8)
+
         # Define model
         model = Resnet18(num_classes=num_of_Gaussian*3)
         model_struct = summary(model, (1, imgSize-2, imgSize-2), verbose=0)
@@ -241,15 +251,18 @@ def train(imgSize):
         # optimizer = torch.optim.Adam(model.parameters(), lr=5e-4, weight_decay=5e-3)
         scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
-        bestmodel_name      = f'best_model_NoG_{num_of_Gaussian}_run_{run}' 
-        result_file_name    = f'train_loss_NoG_{num_of_Gaussian}_run_{run}'
-        logger.info(f'Dataset: {imgSize}, Run: {run}, NoG: {num_of_Gaussian}, Start training')
-        train_loss, df_loss = Trn.train_only(train_dataloader, model, loss_func_mse, 
+        Trn = trainer.Trainer()
+        bestmodel_name      = f'best_model_NoG_{num_of_Gaussian}_run_{fold}' 
+        result_file_name    = f'train_loss_NoG_{num_of_Gaussian}_run_{fold}'
+        logger.info(f'Dataset: {imgSize}, Fold: {fold}, NoG: {num_of_Gaussian}, Start training')
+        val_loss_min, train_loss, df_loss = Trn.train_and_val(train_dataloader, val_dataloader, model, loss_func_mse, 
                                                     optimizer, scheduler, num_epochs=30,
                                                     model_dir=checkpoint_path, model_name=bestmodel_name)
 
-        train_result = {'Run':run, 'NoG':num_of_Gaussian, 'Events':'Train', 'Error':train_loss}
+        train_result = {'Fold':fold, 'NoG':num_of_Gaussian, 'Events':'Train', 'Error':train_loss}
+        val_result   = {'Fold':fold, 'NoG':num_of_Gaussian, 'Events':'Validation', 'Error':val_loss_min}
         df_loss_best = df_loss_best.append(train_result, ignore_index=True)
+        df_loss_best = df_loss_best.append(val_result,   ignore_index=True)
 
         df_loss.to_csv(os.path.join(checkpoint_path, f'{result_file_name}.csv'), index=False)
 
@@ -286,10 +299,10 @@ if __name__=='__main__':
 
     num_of_Gaussian = 11
 
+    #train(imgSize=301)
     train(imgSize=201)
-    train(imgSize=301)
-    train(imgSize=101)
-    train(imgSize=401)
-    train(imgSize=100)
+    #train(imgSize=101)
+    #train(imgSize=401)
+    #train(imgSize=100)
 
     print('Done')
