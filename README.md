@@ -33,3 +33,8 @@ The mean and std values are used to normalize the datasets (training, validation
 We used ResNet-18 as the backbone and modified it to estimate the phase function using a Gaussian mixture model.The number of neurons in the last Fc layer of ResNet-18 was set to the number of Gaussian components (NoG). The optimal NoG was determined by varying the NoG from 2 to 10 and then training the models separately. The NoG value of the model with the smallest validation error was selected as the best NoG.
 
 Depending on the NoG, training a model (30 epochs) costs about 20 minutes (NoG=2) to 1 hour (NoG=10).
+
+
+## Config Github proxy
+
+https://blog.csdn.net/weixin_39827315/article/details/110661140
