@@ -23,24 +23,26 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
         os.mkdir(os.path.join(img_path, 'image'))
 
     datalist = pd.DataFrame(columns=['Image', 'ua', 'us', 'g', 'Tissue', 'dr', 'ndr',
-                                    'SpecularReflectance', 'Absorption', 'Reflectance', 'Transmittance', 'ImgSize', 'Outlier', 'OutlierPercent', 'Error'])
+                                    'SpecularReflectance', 'Absorption', 'Reflectance', 'Transmittance', 'ImgSize', 'Outlier', 'OutlierPercent',
+                                    'Run', 'Error', 'estimated_g', 'delta_g'])
     profiles = []
     tissueNames = []
     files = sorted(glob.glob(os.path.join(data_path, '*.mco')))
     for mcofile in files:
-        InParam = readMCO.readInParam(mcofile)
-        Rd_xy   = readMCO.readImage(mcofile, InParam.ndr, 'Rd_xy')
+        print(mcofile)
 
+        InParam = readMCO.readInParam(mcofile)
+
+        Rd_xy   = readMCO.readImage(mcofile, InParam.ndr, 'Rd_xy')
         total_W = np.sum(Rd_xy)
         Rd_xy = Rd_xy[1:-1,1:-1]
         outlier_W = np.abs(total_W - np.sum(Rd_xy))
 
-        w, h = Rd_xy.shape
-
-        print(mcofile)
-
         _, filename = mcofile.split(os.path.sep)
+        np.save(os.path.join(img_path, filename), Rd_xy)
+
         tissue = filename.split('_')[0]
+        w, h = Rd_xy.shape
 
         beamWidth = 0.03 # cm
         bw = int(beamWidth/InParam.dr)
@@ -48,10 +50,9 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
         kernel = kernel.astype(float)
         kernel /= np.sum(kernel)
         #img = cv2.filter2D(Rd_xy, -1, kernel)
+
         img = Rd_xy
         img = np.power(img, 0.5)
-
-        np.save(os.path.join(img_path, filename), img)
 
         if filename.find('0001') != -1:
             print('saving reflectance image ...')
@@ -69,7 +70,8 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
                 'SpecularReflectance':InParam.SpecularReflectance,
                 'Absorption':InParam.AbsorbedFraction, 'Reflectance':InParam.DiffuseReflectance, 
                 'Transmittance':InParam.Transmittance,
-                'ImgSize':w, 'Outlier':outlier_W, 'OutlierPercent':100*outlier_W/total_W, 'Error': 0}
+                'ImgSize':w, 'Outlier':outlier_W, 'OutlierPercent':100*outlier_W/total_W, 
+                'Run':0, 'Error': 0, 'estimated_g':0, 'delta_g':0}
         datalist = datalist.append(pdRow, ignore_index=True)
 
     datalist.to_csv(os.path.join(img_path, dataListFile), index=False)
@@ -89,7 +91,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
 # ==================================================================
 if __name__=='__main__':
 
-    imgSize = 100
+    imgSize = 301
 
     src_path        = f"RawData_MCML_Val_{imgSize}"
     dst_path        = f"ImageCW_Val_{imgSize}"
