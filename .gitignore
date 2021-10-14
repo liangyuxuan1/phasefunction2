@@ -136,3 +136,4 @@ images_testing/
 *.zip
 *.pkl
 *.pt
+*.npy
