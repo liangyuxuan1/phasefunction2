@@ -50,7 +50,8 @@ class Tester:
                 features.append(feature)
 
                 gt = gt.numpy()
-                df['Error'].iloc[i] = loss.item()
+                #df['Error'].iloc[i] = loss.item()
+                df.loc[i, 'Error'] = loss.item()
 
                 filename = df['Image'].iloc[i]
 
