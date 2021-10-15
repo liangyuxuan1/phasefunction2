@@ -16,7 +16,7 @@ class Tester:
     def logger(self):
         return logging.getLogger(__name__)
 
-    def test(self, dataset, model, loss_fn, inverse_transform, figure_path, save_fig, index, device):
+    def test(self, dataset, model, loss_fn, inverse_transform, figure_path, save_fig, index, run, device):
         if save_fig:
             if not os.path.exists(figure_path):
                 os.mkdir(figure_path)
@@ -83,23 +83,23 @@ class Tester:
                         plt.plot(theta, pGMM, label='GMM')
                         plt.legend()
 
-                        plt.savefig(os.path.join(figure_path, filename[:-3]+'png'), bbox_inches='tight')
+                        plt.savefig(os.path.join(figure_path, filename[:-4]+f'_Run_{run}.png'), bbox_inches='tight')
 
                         ax.set_title('')
-                        plt.savefig(os.path.join(figure_path, filename[:-4]+'_notitle.png'), bbox_inches='tight')
+                        plt.savefig(os.path.join(figure_path, filename[:-4]+f'_notitle_Run_{run}.png'), bbox_inches='tight')
 
 
                         # save individual parts
                         fig, ax = plt.subplots(figsize=(4,3), dpi=300)
                         isns.imshow(img, ax=ax, cmap='gist_heat', vmin=0, dx=df['dr'].iloc[i], units='cm')
-                        plt.savefig(os.path.join(figure_path, filename[:-4]+'_image.png'), bbox_inches='tight')
+                        plt.savefig(os.path.join(figure_path, filename[:-4]+f'_image_Run_{run}.png'), bbox_inches='tight')
 
                         fig, ax = plt.subplots(figsize=(4,3), dpi=300)
                         plt.axis("on")
                         plt.plot(theta, pHG, label='HG')
                         plt.plot(theta, pGMM, label='GMM')
                         plt.legend()
-                        plt.savefig(os.path.join(figure_path, filename[:-4]+'_phase.png'), bbox_inches='tight')
+                        plt.savefig(os.path.join(figure_path, filename[:-4]+f'_phase_Run_{run}.png'), bbox_inches='tight')
 
                         plt.close('all')
 
@@ -107,7 +107,7 @@ class Tester:
                                     
         return df, features
 
-    def run(self, dataset, network, loss_func, model_dir, model_name, inverse_transform, figure_path_name=None, index = None, device=None):
+    def run(self, dataset, network, loss_func, model_dir, model_name, inverse_transform, figure_path_name=None, index = None, run=None, device=None):
         if figure_path_name is None:
             save_fig = False
             figure_path = ''
@@ -129,6 +129,6 @@ class Tester:
         # copy network to device [cpu /gpu] if available
         network.to(device=device)
 
-        loss_df, features = self.test(dataset, network, loss_func, inverse_transform, figure_path, save_fig, index, device)
+        loss_df, features = self.test(dataset, network, loss_func, inverse_transform, figure_path, save_fig, index, run, device)
 
         return loss_df, features

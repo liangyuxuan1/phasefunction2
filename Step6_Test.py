@@ -227,7 +227,7 @@ def test(imgSize, index=None):
         df_loss.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}_Run_{run}.csv'))
 
         index = [df_loss['Error'].idxmin(), df_loss['Error'].idxmax()]
-        Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing', index)
+        Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing', index, run)
 
     df_results.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}.csv'))
 
