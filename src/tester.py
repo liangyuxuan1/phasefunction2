@@ -40,7 +40,7 @@ class Tester:
                 gt = gt.reshape(1,-1)
                 X, y = X.to(device), gt.to(device)
                 pred, feature = model(X)
-                loss, pHG, pGMM = loss_fn(pred, y)
+                loss, pHG, pGMM, estimated_g, delta_g = loss_fn(pred, y)
                 pHG, pGMM = pHG.to('cpu'), pGMM.to('cpu')
                 pHG, pGMM = pHG.squeeze(), pGMM.squeeze()
                 pHG, pGMM = pHG.numpy(), pGMM.numpy()
@@ -52,6 +52,8 @@ class Tester:
                 gt = gt.numpy()
                 #df['Error'].iloc[i] = loss.item()
                 df.loc[i, 'Error'] = loss.item()
+                df.loc[i, 'estimated_g'] = estimated_g.item()
+                df.loc[i, 'delta_g'] = delta_g.item()
 
                 filename = df['Image'].iloc[i]
 
