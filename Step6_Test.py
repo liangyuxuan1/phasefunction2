@@ -124,9 +124,12 @@ def loss_func_mse(prediction, gt):
 
     #loss = loss_phase + loss_uas
 
+    estimated_g = torch.sum(gmm*torch.cos(theta), dim=1)/1000.0
+    delta_g = torch.div(torch.abs(estimated_g-g), g)*100.0
+
     loss = loss_phase
 
-    return loss, p_theta, gmm
+    return loss, p_theta, gmm, estimated_g, delta_g
 
 
 # ==============================================================================================================
@@ -168,27 +171,22 @@ def test(imgSize, index=None):
     if imgSize == 301:
         meanPixelVal = 0.86591   
         stdPixelVal  = 3.01413
-        model_name = 'best_model_NoG_11_run_3.pt'  
 
     if imgSize == 201:
         meanPixelVal = 1.64004   
         stdPixelVal  = 4.40112
-        model_name = 'best_model_NoG_11_run_0.pt'  
 
     if imgSize == 101:
         meanPixelVal = 4.20267   
         stdPixelVal  = 8.26528
-        model_name = 'best_model_NoG_11_run_0.pt'  
 
     if imgSize == 401:
         meanPixelVal = 1.63391   
         stdPixelVal  = 4.67807
-        model_name = 'best_model_NoG_11_run_0.pt'  
 
     if imgSize == 100:
         meanPixelVal = 1.65235   
         stdPixelVal  = 4.12344
-        model_name = 'best_model_NoG_11_run_0.pt'          
     
     test_img_path       = f"ImageCW_Val_{imgSize}"
     test_DataListFile   = f"ValDataCW_MCML_{imgSize}.csv"
@@ -217,12 +215,21 @@ def test(imgSize, index=None):
     Tst = tester.Tester()
     print(f'NoG: {num_of_Gaussian}, Start testing')
 
-    if index is None:
-        df_loss, features = Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing')
-        df_loss.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}.csv'))
-        np.save(os.path.join(checkpoint_path, f'Test_Results_Features_{imgSize}.npy'), features)
-    else:
-        Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing', index)
+    df_results = pd.DataFrame()
+    for run in range(5):
+        model_name = f'best_model_NoG_11_run_{run}.pt'          
+
+        df_loss, features = Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer)
+        df_loss['Run']=run
+        df_results = df_results.append(df_loss, ignore_index=True)
+
+        np.save(os.path.join(checkpoint_path, f'Test_Results_Features_{imgSize}_Run_{run}.npy'), features)
+        df_loss.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}_Run_{run}.csv'))
+
+        index = [df_loss['Error'].idxmin(), df_loss['Error'].idxmax()]
+        Tst.run(test_data, model, loss_func_mse, checkpoint_path, model_name, inverse_preprocessing_transformer, 'images_testing', index, run)
+
+    df_results.to_csv(os.path.join(checkpoint_path, f'Test_Results_{imgSize}.csv'))
 
 #====================================================================
 if __name__=='__main__':
@@ -235,12 +242,8 @@ if __name__=='__main__':
 
     num_of_Gaussian = 11
 
-    #test(imgSize=201)
-    test(imgSize=201, index=[861, 620])
-
+    test(imgSize=201)
     test(imgSize=100)
-    test(imgSize=100, index=[1613, 1426])
-
     test(imgSize=301)
     test(imgSize=101)
     test(imgSize=401)

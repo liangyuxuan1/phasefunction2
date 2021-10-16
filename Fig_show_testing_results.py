@@ -66,11 +66,16 @@ df = df.append(df5,  ignore_index=True)
 df = df.append(df4,  ignore_index=True)
 
 # Table Overview of Results, mean of MSE and standard error of MSE
+# [df3['Error'].sem(),  df2['Error'].sem(),  df1['Error'].sem(),  df4['Error'].sem(),  df5['Error'].sem()]
 
-results = np.array([[df3['Error'].mean(), df2['Error'].mean(), df1['Error'].mean(), df4['Error'].mean(), df5['Error'].mean()],
-           [df3['Error'].sem(),  df2['Error'].sem(),  df1['Error'].sem(),  df4['Error'].sem(),  df5['Error'].sem()] ])
+results = np.array([[101, df3['Error'].mean(), df3['Error'].std(), df3['delta_g'].mean(), df3['delta_g'].std()],
+                    [201, df2['Error'].mean(), df2['Error'].std(), df2['delta_g'].mean(), df2['delta_g'].std()],
+                    [301, df1['Error'].mean(), df1['Error'].std(), df1['delta_g'].mean(), df1['delta_g'].std()],
+                    [401, df4['Error'].mean(), df4['Error'].std(), df4['delta_g'].mean(), df4['delta_g'].std()],
+                    [100, df5['Error'].mean(), df5['Error'].std(), df5['delta_g'].mean(), df5['delta_g'].std()]
+            ])
 
-np.savetxt(os.path.join(output_path, 'Test_Results_Overview.txt'), results, fmt='%.6f')
+np.savetxt(os.path.join(output_path, 'Test_Results_Overview.txt'), results, fmt='%.3f')
 
 # --------------------------------------------------------------------------------------
 # line plot of each dataset: Error vs g, Error vs leakage

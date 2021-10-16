@@ -12,6 +12,8 @@ imgSize = 201
 img_path = f"ImageCW_Val_{imgSize}"
 DataListFile = f"ValDataCW_MCML_{imgSize}.csv"
 
+features = np.load('training_results_MCML_201/Test_Results_Features_201_Run_4.npy')
+
 output_path = 'testing_results'
 if not os.path.exists(output_path):
     os.mkdir(output_path)
@@ -81,6 +83,8 @@ singleFigDis = cdist(singleFig, singleFig, metric=metric)
 subCategoryDis = cdist(subCategory, subCategory, metric=metric)
 categoryDis = cdist(category, category, metric=metric)
 
+featureDis = cdist(features, features, metric=metric)
+
 # Stp3 : Building the pdDataFrame data of category levels similarity matrix
 
 categoryData = {}
@@ -123,3 +127,16 @@ ax.tick_params(top=True, bottom=True, labeltop=False, labelbottom=False)  # labe
 plt.setp(ax.get_yticklabels(), rotation=360, ha="right",
          rotation_mode="anchor")
 plt.savefig(os.path.join(output_path, f"RDM_singleFig_{imgSize}.png"), bbox_inches='tight', dpi=300)
+plt.close()
+
+# ploting feature RMD
+ax = sns.heatmap(featureDis, cmap='deep', square=True, cbar=True)  # cbar=False可关闭颜色柱
+singleFigIndex = np.arange(0, len(singleFigNames), len(singleFigNames) / 11) + len(singleFigNames) / 11 / 2
+ax.set_xticks(singleFigIndex)
+ax.set_yticks(singleFigIndex)
+ax.set_xticklabels(categoryNames)
+ax.set_yticklabels(categoryNames)
+ax.tick_params(top=True, bottom=True, labeltop=False, labelbottom=False)  # labeltop=True可关闭上侧类标
+plt.setp(ax.get_yticklabels(), rotation=360, ha="right",
+         rotation_mode="anchor")
+plt.savefig(os.path.join(output_path, f"RDM_features_{imgSize}.png"), bbox_inches='tight', dpi=300)
