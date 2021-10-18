@@ -168,12 +168,19 @@ if __name__=='__main__':
     # 101x101 (99x99),   0.2cm x 0.2 cm, mean = 4.20267, std = 8.26528
     # 51x51   (49x49),   0.1cm x 0.1 cm, mean = 9.19103, std = 15.37926
 
+    # 2021-09-28
+    # 301, dr=0.002, ndr=150, FoV=0.6x0.6, mean = 0.86591, std = 3.01413
+    # 201, dr=0.002, ndr=100, FoV=0.4x0.4, mean = 1.64004, std = 4.40112
+    # 101, dr=0.002, ndr=50,  FoV=0.2x0.2, mean = 4.20267, std = 8.26528
+    # 401, dr=0.001, ndr=200, FoV=0.4x0.4, mean = 1.63391, std = 4.67807
+    # 100, dr=0.004, ndr=50,  FoV=0.4x0.4, mean = 1.65235, std = 4.12344
+
     imgSize = 201
 
     # resolution = 0.002
-    if imgSize == 401:
-        meanPixelVal = 0.53076   
-        stdPixelVal  = 2.29144
+    if imgSize == 301:
+        meanPixelVal = 0.86591   
+        stdPixelVal  = 3.01413
         batch_size = 220
 
     if imgSize == 201:
@@ -186,33 +193,15 @@ if __name__=='__main__':
         stdPixelVal  = 8.26528
         batch_size   = 220
 
-    if imgSize == 51:
-        meanPixelVal = 9.19103   
-        stdPixelVal  = 15.37926
+    if imgSize == 401:
+        meanPixelVal = 1.63391   
+        stdPixelVal  = 4.67807
         batch_size = 220
 
-
-    '''
-    if imgSize == 501:
-        meanPixelVal = 0.01578   
-        stdPixelVal  = 0.32363
-        batch_size = 160
-
-    if imgSize == 301:
-        meanPixelVal = 0.04370   
-        stdPixelVal  = 0.53899
-        batch_size   = 160
-
-    if imgSize == 251:
-        meanPixelVal = 0.01584   
-        stdPixelVal  = 0.30017
-        batch_size   = 160
-
-    if imgSize == 101:
-        meanPixelVal = 0.36190   
-        stdPixelVal  = 1.59218
-        batch_size = 160
-    '''
+    if imgSize == 100:
+        meanPixelVal = 1.65235   
+        stdPixelVal  = 4.12344
+        batch_size = 220
 
     train_img_path      = f"ImageCW_Train_{imgSize}"
     train_DataListFile  = f"TrainDataCW_MCML_{imgSize}.csv"
