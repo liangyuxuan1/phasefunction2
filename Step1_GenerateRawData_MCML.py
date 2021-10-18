@@ -24,8 +24,8 @@ def generate_mci(parameters, gV, num_of_samples, filename):
                 fid.write('#InParm                    	# Input parameters. cm is used.\n')
                 fid.write(f'{tissue}_g{gi:>1d}_{i:>04d}.mco 	A	      	# output file name, ASCII.\n')
                 fid.write('10000000                  	# No. of photons\n')
-                fid.write('0.01	0.004               	    # dz, dr [cm]\n')
-                fid.write('10 50 10                	# No. of dz, dr, da.\n\n')
+                fid.write('0.01	0.001               	    # dz, dr [cm]\n')
+                fid.write('10 200 10                	# No. of dz, dr, da.\n\n')
                 fid.write('1                        	# Number of layers\n')
                 fid.write('#n	mua	mus	g	d         	# One line for each layer\n')
                 fid.write('1                         	# n for medium above\n')
@@ -57,7 +57,7 @@ df['ua'] = df['ua']*10
 df['rus'] = df['rus']*10 
 
 n  = 1.37               # refractive index, no need to vary for single layer slab
-trainNum = 200          # training number of runs (images) for each set of parameters
+trainNum = 400          # training number of runs (images) for each set of parameters
 valNum   = 40
 
 # train less and validation more leads to large validation error
@@ -67,8 +67,8 @@ valNum   = 40
 g_train = [0.65, 0.75, 0.85, 0.95]
 g_val   = [0.6, 0.7, 0.8, 0.9]
 
-train_path  = 'RawData_MCML_Train_100'
-val_path    = 'RawData_MCML_Val_100'
+train_path  = 'RawData_MCML_Train_400'
+val_path    = 'RawData_MCML_Val_400'
 
 if not os.path.exists(train_path):
     os.mkdir(train_path)

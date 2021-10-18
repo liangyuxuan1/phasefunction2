@@ -91,7 +91,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
 # ==================================================================
 if __name__=='__main__':
 
-    imgSize = 301
+    imgSize = 400
 
     src_path        = f"RawData_MCML_Val_{imgSize}"
     dst_path        = f"ImageCW_Val_{imgSize}"

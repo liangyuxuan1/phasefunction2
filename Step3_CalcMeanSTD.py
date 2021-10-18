@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 import os
 
-img_path = "ImageCW_Train_100"
-DataListFile = "TrainDataCW_MCML_100.csv"
+img_path = "ImageCW_Train_400"
+DataListFile = "TrainDataCW_MCML_400.csv"
 
 labels = pd.read_csv(os.path.join(img_path, DataListFile))
 
@@ -33,6 +33,9 @@ print(img_std)
 print('Done')
 
 # The results
+
+# 2021-10-16
+# 400, dr=0.001, ndr=200, FoV=0.4x0.4, mean = 1.63392, std = 4.67843, sample number doubled to 400
 
 # 2021-09-28
 # 301, dr=0.002, ndr=150, FoV=0.6x0.6, mean = 0.86591, std = 3.01413

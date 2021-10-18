@@ -166,7 +166,15 @@ def loss_func_mse(prediction, gt):
     # 401, dr=0.001, ndr=200, FoV=0.4x0.4, mean = 1.63391, std = 4.67807
     # 100, dr=0.004, ndr=50,  FoV=0.4x0.4, mean = 1.65235, std = 4.12344
 
+    # 2021-10-16
+    # 400, dr=0.001, ndr=200, FoV=0.4x0.4, mean = 1.63392, std = 4.67843, sample number doubled to 400
+
 def train(imgSize):
+
+    if imgSize == 400:
+        meanPixelVal = 1.63392   
+        stdPixelVal  = 4.67843
+        batch_size = 220
 
     if imgSize == 301:
         meanPixelVal = 0.86591   
@@ -286,10 +294,14 @@ if __name__=='__main__':
 
     num_of_Gaussian = 11
 
-    train(imgSize=201)
-    train(imgSize=301)
-    train(imgSize=101)
-    train(imgSize=401)
-    train(imgSize=100)
+
+    train(imgSize=400)
+
+
+    #train(imgSize=201)
+    #train(imgSize=301)
+    #train(imgSize=101)
+    #train(imgSize=401)
+    #train(imgSize=100)
 
     print('Done')

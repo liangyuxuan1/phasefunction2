@@ -168,6 +168,10 @@ def loss_func_mse(prediction, gt):
 
 def test(imgSize, index=None):
 
+    if imgSize == 400:
+        meanPixelVal = 1.63392   
+        stdPixelVal  = 4.67843
+
     if imgSize == 301:
         meanPixelVal = 0.86591   
         stdPixelVal  = 3.01413
@@ -241,6 +245,8 @@ if __name__=='__main__':
     theta = torch.from_numpy(theta).to(device)
 
     num_of_Gaussian = 11
+
+    test(imgSize=400)
 
     test(imgSize=201)
     test(imgSize=100)

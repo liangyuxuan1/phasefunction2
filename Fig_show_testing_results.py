@@ -50,6 +50,12 @@ checkpoint_path5 = f'training_results_MCML_{imgSize5}'
 df5 = pd.read_csv(os.path.join(checkpoint_path5, f'Test_Results_{imgSize5}.csv'))
 df5['ImgSize'] = '4x4 @ 0.04'
 
+imgSize6 = 400
+checkpoint_path6 = f'training_results_MCML_{imgSize6}'
+df6 = pd.read_csv(os.path.join(checkpoint_path6, f'Test_Results_{imgSize6}.csv'))
+df6['ImgSize'] = '4x4 @ 0.01 x 2'
+
+
 output_path = 'testing_results'
 if not os.path.exists(output_path):
     os.mkdir(output_path)
@@ -72,7 +78,8 @@ results = np.array([[101, df3['Error'].mean(), df3['Error'].std(), df3['delta_g'
                     [201, df2['Error'].mean(), df2['Error'].std(), df2['delta_g'].mean(), df2['delta_g'].std()],
                     [301, df1['Error'].mean(), df1['Error'].std(), df1['delta_g'].mean(), df1['delta_g'].std()],
                     [401, df4['Error'].mean(), df4['Error'].std(), df4['delta_g'].mean(), df4['delta_g'].std()],
-                    [100, df5['Error'].mean(), df5['Error'].std(), df5['delta_g'].mean(), df5['delta_g'].std()]
+                    [100, df5['Error'].mean(), df5['Error'].std(), df5['delta_g'].mean(), df5['delta_g'].std()],
+                    [400, df6['Error'].mean(), df6['Error'].std(), df6['delta_g'].mean(), df6['delta_g'].std()]
             ])
 
 np.savetxt(os.path.join(output_path, 'Test_Results_Overview.txt'), results, fmt='%.3f')
