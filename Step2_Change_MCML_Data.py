@@ -9,6 +9,8 @@ import os
 import glob
 
 import sys
+
+from skimage import color
 sys.path.append('./src')
 import readMCO
 
@@ -81,7 +83,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
 
     plt.subplots(dpi=300)
     for i in range(len(profiles)):
-        plt.plot(ax, profiles[i,:], label=tissueNames[i])
+        plt.plot(ax, profiles[i,:], label=tissueNames[i], color=plt.cm.tab20(i))
     #axx.legend(title='', bbox_to_anchor=(1.02,1),loc='upper left', borderaxespad=0)
     plt.legend()
     plt.xlabel('x [mm]')
@@ -91,7 +93,7 @@ def changeMCML_rawData(data_path, img_path, dataListFile):
 # ==================================================================
 if __name__=='__main__':
 
-    imgSize = 400
+    imgSize = 401
 
     src_path        = f"RawData_MCML_Val_{imgSize}"
     dst_path        = f"ImageCW_Val_{imgSize}"
