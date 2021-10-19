@@ -1,14 +1,16 @@
-# Phase function estimation using CudaMCML
+# Estimation of phase function from diffuse reflectance images by deep convolutional neural networks
+
+Summer intern project (remote) supervised by [Prof. Ge Wang](https://biotech.rpi.edu/centers/bic/people/faculty/ge-wang), Rensselaer Polytechnic Institute, USA. May-September, 2021. 
+
+This repository contains the code for my summer intern project. Our paper is submitting to Physics in Medicine & Biology. A draft of the paper is available here. 
+
+- Yuxuan Liang, Chuang Niu, Chen Wei, Shenghan Ren, Wenxiang Cong and Ge Wang, Estimation of phase function from diffuse reflectance images by deep convolutional neural networks, submitting to *Physics in Medicine & Biology*. 
+
+## Step 1: Generate raw data using CUDAMCML
 
 The [GPU accelerated MCML](https://www.atomic.physics.lu.se/biophotonics/research/monte-carlo-simulations/gpu-monte-carlo/) is modified to also record the diffused reflectance and transmittance in Cartesian coordinate. The release program in the directory of ``CudaMCML``was build with Cuda 11.1 under Xubuntu 18.04. 
 
-Refer to: E. Alerstam, T. Svensson, and S. Andersson-Engels, Parallel computing with graphics processing units for high speed Monte Carlo simulation of photon migration, J. Biomedical Optics Letters 13, 060504 (2008) 
-
-## Step 1: Generate raw data using MCML
-
 [Step1_CalcTissueParams.py](Step1_CalcTissueParams.py): Calculate the absorption and reduced scattering coefficients of tissues. The input parameters is in [TissueParamRaw.csv](TissueParamRaw.csv) and the output is in [TissueParams.csv](TissueParams.csv).
-
-Refer to: George Alexandrakis, Fernando R Rannou and Arion F Chatziioannou,Tomographic bioluminescence imaging by use of a combined optical-PET (OPET) system: a computer simulation feasibility study,  Phys. Med. Biol. 50, 4225–4241 (2005)
 
 [Step1_GenerateRawData_MCML.py](Step1_GenerateRawData_MCML.py): Generate MCI files for training (``train.mci``) and validation (``val.mci``), respectively. Then go to the raw data directories (``RawData_MCML_Train`` and ``RawData_MCML_Val``, created by the program) and run ``./CudaMCML train.mci`` and ``./CudaMCML val.mci`` respectively in the terminal. Make sure to copy ``CudaMCML`` and ``safeprimes_base32.txt`` to the data directories before run ``CudaMCML``.
 
